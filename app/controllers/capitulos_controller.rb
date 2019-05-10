@@ -9,6 +9,10 @@ class CapitulosController < ApplicationController
       user: current_user, capitulo: @capitulo)
 	end
 
+    def update_prova_aluno(prova_aluno,resposta1)
+        prova_aluno.update_attributes(resposta1: resposta1)
+    end
+
 	private
 
 	 def capitulo_params

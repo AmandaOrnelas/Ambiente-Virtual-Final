@@ -1,10 +1,47 @@
 class ProvaAlunosController < ApplicationController
 
-  def create
-    @user = User.find(params[:user_id])
-    @prova_aluno = @user.prova_aluno.create(prova_aluno_params)
-    redirect_to article_path(@user)
-  end
+
+  	def index
+    	@prova_aluno = ProvaAluno.all
+  	end
+
+  	def show
+    	@prova_aluno = ProvaAluno.find(params[:id])
+  	end
+
+	def new
+  		@prova_aluno = ProvaAluno.new
+	end
+
+ 	def edit
+  		@prova_aluno = ProvaAluno.find(params[:id])
+	end
+
+	def create
+  		@prova_aluno = ProvaAluno.new(prova_aluno_params)
+
+  		if @prova_aluno.save
+    		redirect_to @prova_aluno
+  		else
+    		render 'new'
+ 	 	end
+	end
+
+  def update
+    prova_aluno = ProvaAluno.find(params[:id])
+    prova_aluno.update!(resposta1: params[:prova_aluno][:resposta1])
+
+		# @tempo_capitulo = TempoCapitulo.find(params[:id])
+
+	 # 	if @tempo_capitulo.update(tempo_capitulo_params)
+	 #    	redirect_to @tempo_capitulo
+	 #  	else
+	 #    	render 'edit'
+	 #  	end
+	end
+
+
+
 
  
   private

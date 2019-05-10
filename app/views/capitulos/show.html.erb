@@ -1,37 +1,243 @@
 <span id="counter-time" data-seconds='<%= @tempo_capitulo.tempo_total %>'></span>
 
 <script>
+var pontuação=0;
 
+  function salvaresposta(certa, questao){
 
+   /* db.transaction(function(transaction) {
+      transaction.executeSql('SELECT id FROM prova_alunos where user_id = 1 and avaliacao_id = 1;', [], retrieveData());
+    });
+    function retrieveData(transaction, results) {
+      for(var i = 0; i < results.rows.length; i++) {
 
-  function formatatempo(segs) {
-    min = 0;
-    hr = 0;
-
-    while(segs>=60) {
-        if (segs >=60) {
-          segs = segs-60;
-          min = min+1;
-        }
-    }
-
-    while(min>=60) {
-      if (min >=60) {
-        min = min-60;
-        hr = hr+1;
+          var data = results.rows.item(i)['id']
+          alert(data.value);
       }
+    } */
+
+    
+    document.getElementById("botao").disabled = true;
+
+    var resposta = $('input[name=resp1]:checked').val(); //TA PEGANDO CERTO!
+
+    var user_id = <%= current_user.id %>
+    
+    //var certa = document.getElementById('certa').innerHTML;
+    //var questao = document.getElementById('questao').innerHTML;
+
+    var value = 1;
+    alert(questao);
+
+   // if (questao==1){
+    let authoToken = $('meta[name=csrf-token]').attr('content');
+    $.ajax({
+      type: 'POST',
+      url: '/prova_alunos/'+value,
+      data: {
+        _method: 'PATCH',
+        authenticity_token: authoToken,
+        prova_aluno: { resposta1: resposta }
+      }
+    });
+
+   /* }else if (questao==2){
+      alert("22222");
+      let authoToken = $('meta[name=csrf-token]').attr('content');
+      $.ajax({
+        type: 'POST',
+        url: '/prova_alunos/1',
+        data: {
+          _method: 'PATCH',
+          authenticity_token: authoToken,
+          prova_aluno: { resposta2: resposta }
+        }
+      }); */
+
+   // }
+    var pontos = 0;
+    if (resposta == certa){
+      pontos = pontos+1; 
+      alert(pontos);
     }
 
-    if (hr < 10) {hr = "0"+hr}
-    if (min < 10) {min = "0"+min}
-    if (segs < 10) {segs = "0"+segs}
-    fin = hr+":"+min+":"+segs
-    return fin;
   }
+
+
+
+  //funções de açoes do agente 
+
+// Variáveis Globais
+var c = 1;
+var t;
+var timerLigado = 0;
+
+function feliz() {
+    if (c == 1) {
+        document.getElementById('animar').src = "/assets/animacoes/feliz/feliz1.jpg";
+    }
+    else if (c == 2) {
+        document.getElementById('animar').src = "/assets/animacoes/feliz/feliz1.jpg";
+    }
+    else if (c == 3) {
+        document.getElementById('animar').src = "/assets/animacoes/feliz/feliz2.jpg";
+    }
+    else if (c == 4) {
+        document.getElementById('animar').src = "/assets/animacoes/feliz/feliz2.jpg";
+    }
+    else if (c == 5) {
+        document.getElementById('animar').src = "/assets/animacoes/feliz/feliz2.jpg";
+    }
+    else if (c == 6) {
+        document.getElementById('animar').src = "/assets/animacoes/feliz/feliz2.jpg";
+    }
+    else if (c == 7) {
+        document.getElementById('animar').src = "/assets/animacoes/feliz/feliz1.jpg";
+    }
+    else if (c == 6) {
+        document.getElementById('animar').src = "/assets/animacoes/feliz/feliz1.jpg";
+    }
+    else if (c == 7) {
+        document.getElementById('animar').src = "/assets/animacoes/padrao.jpg";
+    }
+    c = c + 1;
+    t = setTimeout("feliz()",300);
+}
+
+
+function empolgado() {
+    if (c == 1) {
+        document.getElementById('animar').src = "/assets/animacoes/empolgado/empolgado12.jpg";
+    }
+    else if (c == 2) {
+        document.getElementById('animar').src = "/assets/animacoes/empolgado/empolgado11.jpg";
+    }
+    else if (c == 3) {
+        document.getElementById('animar').src = "/assets/animacoes/empolgado/empolgado10.jpg";
+    }
+    else if (c == 4) {
+        document.getElementById('animar').src = "/assets/animacoes/empolgado/empolgado9.jpg";
+    }
+    else if (c == 5) {
+        document.getElementById('animar').src = "/assets/animacoes/empolgado/empolgado8.jpg";
+    }
+    else if (c == 6) {
+        document.getElementById('animar').src = "/assets/animacoes/empolgado/empolgado7.jpg";
+    }
+    else if (c == 7) {
+        document.getElementById('animar').src = "/assets/animacoes/empolgado/empolgado6.jpg";
+    }
+    else if (c == 8) {
+        document.getElementById('animar').src = "/assets/animacoes/empolgado/empolgado5.jpg";
+    }
+    else if (c == 9) {
+        document.getElementById('animar').src = "/assets/animacoes/empolgado/empolgado4.jpg";    
+    }
+    else if (c == 10) {
+        document.getElementById('animar').src = "/assets/animacoes/empolgado/empolgado3.jpg";
+        
+    }
+    else if (c == 11) {
+        document.getElementById('animar').src = "/assets/animacoes/empolgado/empolgado2.jpg";   
+    }
+    else if (c == 12) {
+        document.getElementById('animar').src = "/assets/animacoes/empolgado/empolgado1.jpg"; 
+    }
+    else if (c == 13) {
+        document.getElementById('animar').src = "/assets/animacoes/padrao.jpg"; 
+    }
+    // A cada intervalo de tempo, variável c aumenta em 1 seu valor
+    c = c + 1;
+    // Variável t recebe a função setTimeout que executará o código
+    // na função timedCount a cada intervalo de tempo
+    t = setTimeout("empolgado()",200);
+}
+    
+function triste() {
+
+    if (c == 1) {
+        document.getElementById('animar').src = "/assets/animacoes/triste/triste.jpg";
+    }
+    else if (c == 2) {
+        document.getElementById('animar').src = "/assets/animacoes/triste/triste.jpg";
+    }
+    else if (c == 3) {
+        document.getElementById('animar').src = "/assets/animacoes/triste/triste.jpg";
+    }
+    else if (c == 4) {
+        document.getElementById('animar').src = "/assets/animacoes/triste/triste.jpg";
+    }
+    else if (c == 5) {
+        document.getElementById('animar').src = "/assets/animacoes/padrao.jpg";
+    }
+    // A cada intervalo de tempo, variável c aumenta em 1 seu valor
+    c = c + 1;
+    // Variável t recebe a função setTimeout que executará o código
+    // na função timedCount a cada intervalo de tempo
+    t = setTimeout("triste()",300);
+}    
+
+function ajuda() {
+    if (c == 1) {
+        document.getElementById('animar').src = "/assets/animacoes/falas/ajuda1.png";
+    }
+    else if (c == 2) {
+        document.getElementById('animar').src = "/assets/animacoes/falas/ajuda1.png";
+    }
+    else if (c == 3) {
+        document.getElementById('animar').src = "/assets/animacoes/falas/ajuda2.png";
+    }
+    else if (c == 4) {
+        document.getElementById('animar').src = "/assets/animacoes/falas/ajuda2.png";
+    }
+    else if (c == 5) {
+        document.getElementById('animar').src = "/assets/animacoes/falas/ajuda2.png";
+    }
+    else if (c == 6) {
+        document.getElementById('animar').src = "/assets/animacoes/falas/ajuda3.png";
+    }
+    else if (c == 7) {
+        document.getElementById('animar').src = "/assets/animacoes/falas/ajuda3.png";
+    }
+    else if (c == 8) {
+        document.getElementById('animar').src = "/assets/animacoes/falas/ajuda3.png";
+    }
+    else if (c == 9) {
+        document.getElementById('animar').src = "/assets/animacoes/padrao.jpg";
+    }
+    c = c + 1;
+    t = setTimeout("ajuda()",2000);
+}
+
+
+
+    /* Função que checa se o timer já está correndo, evitando a criação de novos timer caso o botão seja pressionado mais
+    de uma vez*/
+    function doTimer(acao) {
+    if (!timerLigado) {
+        timerLigado = 1;
+        acao();
+    }
+}
+
+
+
+
+
+
+
+
+
   var segundos = parseInt($('#counter-time').data('seconds')); //inicio do cronometro
   function conta() {
-    segundos++;
-    document.getElementById("counter").innerHTML = formatatempo(segundos);
+    segundos--;
+    if(segundos == 30){ /////////////////////////////////////TEMPO Q FECHA O MODAL E AGENTE RESPONDE/////////////////////
+      document.getElementById("fechar").click();
+      window.location.href='#ancora';
+      doTimer(ajuda);
+      
+    }
+    document.getElementById("counter").innerHTML = segundos;
   }
 
   function inicia(){
@@ -96,26 +302,23 @@
 
 
 
-    clippy.load('F1', function(agent) {
+  //  clippy.load('F1', function(agent) {
         // Do anything with the loaded agent
 
-        agent.show();
-        agent.animate();
-        agent.stop();
-        agent.speak('When all else fails, bind some paper together. My name is Clippy.');
-
-
-      
+    //    agent.show();
+    //    agent.animate();
+    //    agent.stop();
+    //    agent.speak('When all else fails, bind some paper together. My name is Clippy.');
         
-        agent.speak('outra fala');
-        agent.play('Searching');agent.play('Searching');
-        agente.stop();
+    //    agent.speak('outra fala');
+    //    agent.play('Searching');agent.play('Searching');
+    //    agente.stop();
 
-        if (counter=="00:00:01"){
-           alert("HI");
+    //    if (counter=="00:00:01"){
+    //       alert("HI");
 
-        }
-    });
+    //    }
+  //  });
 
 </script>
 
@@ -125,18 +328,21 @@
 
 
 <if aluno.logged_in?>
-<div class="name" >Logado como: <%= current_user.name %></div>
+<div id="user_id" data-user-id="<%= current_user.id %>">
+</div>
 <end>
 
 
 <center> <h1><%= @capitulo.titulo %> </h1></center>
-<center><h2>Conteudo</h2></center>
+<!--<center><h3>Conteudo</h3></center>-->
 <%= render @capitulo.conteudos %>
 <br>
-<center><h2>Avaliação</h2>
+<center><!--<h2>Avaliação</h2>-->
 <%= render @capitulo.avaliacaos %>
 </center>
 
 
 
 
+<img id="animar" src="/assets/animacoes/padrao.jpg" width="230px"/>
+<a href="#" id="ancora">

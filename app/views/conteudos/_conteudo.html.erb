@@ -19,26 +19,31 @@
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title" id="myModalLabel"> <%= aula.titulo %> </h4>
+          <h3 class="modal-title" id="myModalLabel"> <%= aula.titulo %> </h3>
           </div>
           <div class="modal-body">
           <div align="justify">
           </div>
-          <br>
-          <center>
+          
+           <center> 
 
-            
-            
-                        <%=image_tag(aula.texto, alt: "Aula", width: "500px")%>
+                <style type="text/css">
+                    background-color: #FAEBD7;
+                </style>
+
+                <h3></h3>
+          
+
+            <%=image_tag(aula.texto, alt: "Aula", width: "800px")%> 
 
 
-          </center>
+          </center> 
           </div>
           <div class="modal-footer">
             <% if index > 1 %>
               <button type="button" class="btn btn-default btn-prev" data-toggle="modal" data-target="#modal-<%= conteudo.subtitulo.parameterize %>-<%= index - 1 %>" data-dismiss="modal"> <= Prev</button>
             <% end %>
-            <% if index == conteudo.aulas.size - 1 %>
+            <% if index != conteudo.aulas.size %>
               <button type="button" class="btn btn-default btn-next" data-toggle="modal" data-target="#modal-<%= conteudo.subtitulo.parameterize %>-<%= index + 1 %>" onclick="closenext()" data-dismiss="modal">Next => </button>
             <% end %>
 
@@ -46,7 +51,7 @@
                <span id="counter">00:00:00</span>
              <% end %>
 
-             <button type="button" class="btn btn-default" data-dismiss="modal" onclick="para()">Fechar</button>
+             <button type="button" class="btn btn-default" data-dismiss="modal" id="fechar" onclick="para()">Fechar</button>
           </div>
 
         </div>
