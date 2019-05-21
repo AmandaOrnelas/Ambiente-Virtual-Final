@@ -1,96 +1,141 @@
 <% provide(:title, 'Tópico 1') %>
 
-<!-- Init script -->
 <script type="text/javascript">
-// Using global config
-//window.CLIPPY_CDN = './agents/'
-  //  clippy.load('F1', function(agent) {
-        // Do anything with the loaded agent
-    //    agent.show();
-     //   agent.animate();
-     //   agent.stop();
-      //  agent.speak('Testeando animação.');
 
 
-      //  agent.play('Searching');agent.play('Searching');
-      //  agent.play('Wave');agent.play('Wave');
-      //  agente.stop();
-   // });
+	function maisinfo(){
+        document.getElementById('animar').src = "/assets/animacoes/duvida/duvida.gif";
+        document.getElementById("content").innerHTML = "<br>Por enquanto você só tem o capítulo 2 disponível. <br>Você quer fazer a prova para pular o capítulo 1 e ir para o 2? <br>"; 
+        document.getElementById("pulartopico").style.display = 'block';
+	}
 
 
-
-
-    //PEGAR NIVEL
-    //var nivel = "<?php echo $nivel; ?>";
-    //alert(nivel); APARECE UMA TELA ALERTANDO O VALOR DA VARIAVEL NIVEL
-
-    if (nivel == 1){
-        window.onload = function(){
-        document.getElementById('linkDesabilitado2').onclick = function(){ return false }
-        document.getElementById('linkDesabilitado3').onclick = function(){ return false }
-        }
-    }else if(nivel == 2){
-        window.onload = function(){
-        document.getElementById('linkDesabilitado3').onclick = function(){ return false }
-        }
+    function chama(){
+    	var nivel = document.getElementById('nivelAluno').innerHTML;
+    	
+    	var capitulo = document.getElementById('habilitado').innerHTML;
+    	
+    	
+    	if (nivel == 1 && capitulo == "Outros conceitos importantes para Orientação a Objetos "){
+    		alert(nivel); ///RESPONDER USANDO AGENTEEEEEEEEEEEEEEEEEEEEEEEEEE
+    		window.location.href = "http://localhost:3000/capitulos";	
+    	}
+    	
     }
-    </script>
+
+    function negatopico(){
+        document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";
+    	document.getElementById("content").innerHTML = "<br> OK. <br>"; 
+    	document.getElementById("pulartopico").style.display = 'none';
+    	setTimeout(function(){ document.getElementById("content").innerHTML = ""; }, 3000);
+    }
+
+function atencao() {
+    if (c == 1) {
+        document.getElementById('animar').src = "/assets/animacoes/atencao/atencao1.png";
+    }
+    else if (c == 2) {
+        document.getElementById('animar').src = "/assets/animacoes/atencao/atencao3.png";
+    }
+    else if (c == 3) {
+        document.getElementById('animar').src = "/assets/animacoes/atencao/atencao5.png";
+    }
+    else if (c == 4) {
+        document.getElementById('animar').src = "/assets/animacoes/atencao/atencao7.png";
+    }
+    else if (c == 5) {
+        document.getElementById('animar').src = "/assets/animacoes/atencao/atencao9.png";
+    }
+    else if (c == 6) {
+        document.getElementById('animar').src = "/assets/animacoes/atencao/atencao11.png";
+    }
+    else if (c == 7) {
+        document.getElementById('animar').src = "/assets/animacoes/atencao/atencao13.png";
+    }
+    else if (c == 8) {
+        document.getElementById('animar').src = "/assets/animacoes/atencao/atencao14.png";
+    }
+    else if (c == 9) {
+        document.getElementById('animar').src = "/assets/animacoes/atencao/atencao15.png";
+    }
+    else if (c == 10) {
+        document.getElementById('animar').src = "/assets/animacoes/atencao/atencao16.png";
+    }
+    else if (c == 11) {
+        document.getElementById('animar').src = "/assets/animacoes/atencao/atencao17.png";
+    }
+    else if (c == 12) {
+        document.getElementById('animar').src = "/assets/animacoes/atencao/atencao18.png";
+    }
+    else if (c == 13) {
+        document.getElementById('animar').src = "/assets/animacoes/atencao/atencao17.png";
+    }
+    else if (c == 14) {
+        document.getElementById('animar').src = "/assets/animacoes/atencao/atencao14.png";
+    }
+    else if (c == 15) {
+        document.getElementById('animar').src = "/assets/animacoes/atencao/atencao13.png";
+    }
+    else if (c == 16) {
+        document.getElementById('animar').src = "/assets/animacoes/atencao/atencao11.png";
+    }
+    else if (c == 17) {
+        document.getElementById('animar').src = "/assets/animacoes/atencao/atencao9.png";
+    }
+    else if (c == 18) {
+        document.getElementById('animar').src = "/assets/animacoes/atencao/atencao7.png";
+    }
+    else if (c == 19) {
+        document.getElementById('animar').src = "/assets/animacoes/medo/atencao5.png";
+    }
+    else if (c == 20) {
+        document.getElementById('animar').src = "/assets/animacoes/medo/atencao3.png";
+    }
+    else if (c == 21) {
+        document.getElementById('animar').src = "/assets/animacoes/medo/atencao1.png";
+    }
+    else if (c == 22) {
+        document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";
+    }
+    c = c + 1;
+    t = setTimeout("atencao()",110);
+}
 
 
 
-
-
-
+</script>
 <center>
 
 
 
     <h1>    Capítulos </h1>
 
-    <h2>
+    <br><br>
+	<% if current_user.nivel == "1" %>
+    	<% @capitulos.limit(1).each do |capitulo| %>
+	      		<h3><td><%= link_to capitulo.titulo, capitulo_path(capitulo), id: "habilitado", onclick: "chama()" %></td> <br><br></h3>
+	      		<h2><div id="content"  style='text-align:left'></div></h2>
+	      		<div class="pulartopico" id= "pulartopico" style="display: none; text-align:left;"> 
+    				<button onclick="location.href='help'" type="button">SIM</button>
+    				<button onclick="negatopico()" type="button">NÃO</button>
+    			</div>
+    			<%= image_tag('/assets/animacoes/atencao/atencao.gif', :width =>  "130px", :align => "left", :id => "animar", :onclick => "maisinfo()") %> <!--COLOCAR LINK DA PROVA DE PULAR TÓPICOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO -->
+  		<% end %>
+  	<% end -%>
 
-        <br><br>
-<!--    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalClasse1" onclick="inicia()"> Teste
-  </button> -->
-    <!-- <input type="button" onclick="funcao1()" value="Exibir Alert" /> -->
+  	<% if current_user.nivel == "2" %>
+    	<% @capitulos.limit(2).each do |capitulo| %>
+	   		 <tr>
+	      		<h3><td><%= link_to capitulo.titulo, capitulo_path(capitulo), id: "habilitado", onclick: "chama()" %></td> <br><br></h3>
+	    	</tr>
+
+  		<% end %>
+        <%= image_tag('/assets/animacoes/neutro/neutro.gif', :width =>  "130px", :align => "left", :id => "animar") %>
+  	<% end %>
 
 
-
-
-      <% @capitulos.each do |capitulo| %>
-    <tr>
-      <h3><td><%= link_to capitulo.titulo, capitulo_path(capitulo) %></td> <br><br></h3>
-    </tr>
-  <% end %>
-
-
-
-
-
-
-
-<!--LINKS ANTIGOS: <br>
-        <%= link_to "Tópico 1 – Conceitos importantes", capitulo1_path %>
-        <br><br>
-        <%= link_to "Tópico 2 – Conceitos chave de Orientação a Objetos", capitulo2_path %>
-        <br><br>
-        <%= link_to "Tópico 3 – A Programação Orientada a Objetos usando JAVA", capitulo3_path %>
-        <br><br>
-        <%= link_to "Tópico 4 – Exercícios", capitulo4_path %>
-        <br><br>
-        <%= link_to "Tópico 5 – Prova final", capitulo5_path %>
-        <br><br> -->
-   <!--     <a href='/topico1' id='linkDesabilitado2'> Link teste desabilitar </a> -->
-
-        <!-- echo "<td> <h3><a href='modal/modalTopico2.php' id='linkDesabilitado2'> Unidade 2 </a> </h3></td>"; -->
-
-    </h2>
-
+  <div class="nivelAluno" id="nivelAluno" style="display: none;><%= current_user.nivel %></div> <!-- ESCONDEEEEEEER -->
 </center>
-
-
 <br><br><br><br>
-<!-- <if aluno.logged_in?>
-   <div>Logado como <strong><%= current_user.name %></strong>.</div> --><!-- ESTÁ FUNCIONANDO OK! - Qqr problema, conferir se casdatro está correto --> 
 <end>
 

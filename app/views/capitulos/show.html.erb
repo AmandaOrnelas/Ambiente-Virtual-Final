@@ -5,17 +5,6 @@ var pontuação=0;
 
   function salvaresposta(certa, questao){
 
-   /* db.transaction(function(transaction) {
-      transaction.executeSql('SELECT id FROM prova_alunos where user_id = 1 and avaliacao_id = 1;', [], retrieveData());
-    });
-    function retrieveData(transaction, results) {
-      for(var i = 0; i < results.rows.length; i++) {
-
-          var data = results.rows.item(i)['id']
-          alert(data.value);
-      }
-    } */
-
     
     document.getElementById("botao").disabled = true;
 
@@ -40,6 +29,7 @@ var pontuação=0;
         prova_aluno: { resposta1: resposta }
       }
     });
+
 
    /* }else if (questao==2){
       alert("22222");
@@ -72,33 +62,783 @@ var c = 1;
 var t;
 var timerLigado = 0;
 
-function feliz() {
+
+function medo() {
     if (c == 1) {
-        document.getElementById('animar').src = "/assets/animacoes/feliz/feliz1.jpg";
+        document.getElementById('animar').src = "/assets/animacoes/medo/medo1.png";
     }
     else if (c == 2) {
-        document.getElementById('animar').src = "/assets/animacoes/feliz/feliz1.jpg";
+        document.getElementById('animar').src = "/assets/animacoes/medo/medo2.png";
     }
     else if (c == 3) {
-        document.getElementById('animar').src = "/assets/animacoes/feliz/feliz2.jpg";
+        document.getElementById('animar').src = "/assets/animacoes/medo/medo3.png";
     }
     else if (c == 4) {
-        document.getElementById('animar').src = "/assets/animacoes/feliz/feliz2.jpg";
+        document.getElementById('animar').src = "/assets/animacoes/medo/medo4.png";
     }
     else if (c == 5) {
-        document.getElementById('animar').src = "/assets/animacoes/feliz/feliz2.jpg";
+        document.getElementById('animar').src = "/assets/animacoes/medo/medo5.png";
     }
     else if (c == 6) {
-        document.getElementById('animar').src = "/assets/animacoes/feliz/feliz2.jpg";
+        document.getElementById('animar').src = "/assets/animacoes/medo/medo6.png";
     }
     else if (c == 7) {
-        document.getElementById('animar').src = "/assets/animacoes/feliz/feliz1.jpg";
+        document.getElementById('animar').src = "/assets/animacoes/medo/medo7.png";
+    }
+    else if (c == 8) {
+        document.getElementById('animar').src = "/assets/animacoes/medo/medo8.png";
+    }
+    else if (c == 9) {
+        document.getElementById('animar').src = "/assets/animacoes/medo/medo9.png";
+    }
+    else if (c == 10) {
+        document.getElementById('animar').src = "/assets/animacoes/medo/medo10.png";
+    }
+    else if (c == 11) {
+        document.getElementById('animar').src = "/assets/animacoes/medo/medo11.png";
+    }
+    else if (c == 12) {
+        document.getElementById('animar').src = "/assets/animacoes/medo/medo12.png";
+    }
+    else if (c == 13) {
+        document.getElementById('animar').src = "/assets/animacoes/medo/medo13.png";
+    }
+    else if (c == 14) {
+        document.getElementById('animar').src = "/assets/animacoes/medo/medo14.png";
+    }
+    else if (c == 15) {
+        document.getElementById('animar').src = "/assets/animacoes/medo/medo15.png";
+    }
+    else if (c == 16) {
+        document.getElementById('animar').src = "/assets/animacoes/medo/medo16.png";
+    }
+    else if (c == 17) {
+        document.getElementById('animar').src = "/assets/animacoes/medo/medo17.png";
+    }
+    else if (c == 18) {
+        document.getElementById('animar').src = "/assets/animacoes/medo/medo18.png";
+    }
+    else if (c == 19) {
+        document.getElementById('animar').src = "/assets/animacoes/medo/medo19.png";
+    }
+    else if (c == 20) {
+        document.getElementById('animar').src = "/assets/animacoes/medo/medo20.png";
+    }
+    else if (c == 21) {
+        document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";
+    }
+    c = c + 1;
+    t = setTimeout("medo()",110);
+}
+
+
+
+
+function raiva() {
+    if (c == 1) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva1.png";
+    }
+    else if (c == 2) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva2.png";
+    }
+    else if (c == 3) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva3.png";
+    }
+    else if (c == 4) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva4.png";
+    }
+    else if (c == 5) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva5.png";
     }
     else if (c == 6) {
-        document.getElementById('animar').src = "/assets/animacoes/feliz/feliz1.jpg";
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva6.png";
     }
     else if (c == 7) {
-        document.getElementById('animar').src = "/assets/animacoes/padrao.jpg";
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva7.png";
+    }
+    else if (c == 8) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva8.png";
+    }
+    else if (c == 9) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva9.png";
+    }
+    else if (c == 10) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva10.png";
+    }
+    else if (c == 11) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva11.png";
+    }
+    else if (c == 12) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva12.png";
+    }
+    else if (c == 13) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva13.png";
+    }
+    else if (c == 14) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva14.png";
+    }
+    else if (c == 15) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva15.png";
+    }
+    else if (c == 16) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva16.png";
+    }
+    else if (c == 17) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva17.png";
+    }
+    else if (c == 18) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva18.png";
+    }
+    else if (c == 19) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva19.png";
+    }
+    else if (c == 20) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva20.png";
+    }
+    else if (c == 21) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva21.png";
+    }
+    else if (c == 22) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva22.png";
+    }
+    else if (c == 23) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva23.png";
+    }
+    else if (c == 24) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva24.png";
+    }
+    else if (c == 25) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva25.png";
+    }
+    else if (c == 26) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva26.png";
+    }
+    else if (c == 27) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva27.png";
+    }
+    else if (c == 28) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva28.png";
+    }
+    else if (c == 29) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva29.png";
+    }
+    else if (c == 30) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva30.png";
+    }
+    else if (c == 31) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva31.png";
+    }
+    else if (c == 32) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva32.png";
+    }
+    else if (c == 33) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva33.png";
+    }
+    else if (c == 34) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva34.png";
+    }
+    else if (c == 35) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva35.png";
+    }
+    else if (c == 36) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva36.png";
+    }
+    else if (c == 37) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva37.png";
+    }
+    else if (c == 38) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva38.png";
+    }
+    else if (c == 39) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva39.png";
+    }
+    else if (c == 40) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva40.png";
+    }
+    else if (c == 41) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva41.png";
+    }
+    else if (c == 42) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva42.png";
+    }
+    else if (c == 43) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva43.png";
+    }
+    else if (c == 44) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva44.png";
+    }
+    else if (c == 45) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva45.png";
+    }
+    else if (c == 46) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva46.png";
+    }
+    else if (c == 47) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva47.png";
+    }
+    else if (c == 48) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva48.png";
+    }
+    else if (c == 49) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva49.png";
+    }
+    else if (c == 50) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva50.png";
+    }
+    else if (c == 51) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva51.png";
+    }
+    else if (c == 52) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva52.png";
+    }
+    else if (c == 53) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva53.png";
+    }
+    else if (c == 54) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva54.png";
+    }
+    else if (c == 55) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva55.png";
+    }
+    else if (c == 56) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva56.png";
+    }
+    else if (c == 57) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva57.png";
+    }
+    else if (c == 58) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva58.png";
+    }
+    else if (c == 59) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva59.png";
+    }
+    else if (c == 60) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva60.png";
+    }
+    else if (c == 61) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva61.png";
+    }
+    else if (c == 62) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva62.png";
+    }
+    else if (c == 63) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva63.png";
+    }
+    else if (c == 64) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva64.png";
+    }
+    else if (c == 65) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva65.png";
+    }
+    else if (c == 66) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva66.png";
+    }
+    else if (c == 67) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva67.png";
+    }
+    else if (c == 68) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva68.png";
+    }
+    else if (c == 69) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva69.png";
+    }
+    else if (c == 70) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva70.png";
+    }
+    else if (c == 71) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva71.png";
+    }
+    else if (c == 72) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva72.png";
+    }
+    else if (c == 73) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva73.png";
+    }
+    else if (c == 74) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva74.png";
+    }
+    else if (c == 75) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva75.png";
+    }
+    else if (c == 76) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva76.png";
+    }
+    else if (c == 77) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva77.png";
+    }
+    else if (c == 78) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva78.png";
+    }
+    else if (c == 79) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva79.png";
+    }
+    else if (c == 80) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva80.png";
+    }
+    else if (c == 81) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva81.png";
+    }
+    else if (c == 82) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva82.png";
+    }
+    else if (c == 83) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva83.png";
+    }
+    else if (c == 84) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva84.png";
+    }
+    else if (c == 85) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva85.png";
+    }
+    else if (c == 86) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva86.png";
+    }
+    else if (c == 87) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva87.png";
+    }
+    else if (c == 88) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva88.png";
+    }
+    else if (c == 89) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva89.png";
+    }
+    else if (c == 90) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva90.png";
+    }
+    else if (c == 91) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva91.png";
+    }
+    else if (c == 92) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva92.png";
+    }
+    else if (c == 93) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva93.png";
+    }
+    else if (c == 94) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva94.png";
+    }
+    else if (c == 95) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva95.png";
+    }
+    else if (c == 96) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva96.png";
+    }
+    else if (c == 97) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva97.png";
+    }
+    else if (c == 98) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva98.png";
+    }
+    else if (c == 99) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva99.png";
+    }
+    else if (c == 100) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva100.png";
+    }
+    else if (c == 101) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva101.png";
+    }
+    else if (c == 102) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva102.png";
+    }
+    else if (c == 103) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva103.png";
+    }
+    else if (c == 104) {
+        document.getElementById('animar').src = "/assets/animacoes/raiva/raiva104.png";
+    }
+    c = c + 1;
+    t = setTimeout("raiva()",80);
+}
+
+
+
+
+function alegria() {
+
+    if (c == 1) {
+        document.getElementById("content").innerHTML = "<br>Você passou na prova! Parabéns! <br>";
+    }
+    else if (c == 2) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria1.png";
+    }
+    else if (c == 3) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria2.png";
+    }
+    else if (c == 4) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria3.png";
+    }
+    else if (c == 5) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria4.png";
+    }
+    else if (c == 6) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria5.png";
+    }
+    else if (c == 7) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria6.png";
+    }
+    else if (c == 8) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria7.png";
+    }
+    else if (c == 9) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria8.png";
+    }
+    else if (c == 10) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria9.png";
+    }
+    else if (c == 11) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria10.png";
+    }
+    else if (c == 12) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria11.png";
+    }
+    else if (c == 13) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria12.png";
+    }
+    else if (c == 14) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria13.png";
+    }
+    else if (c == 15) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria14.png";
+    }
+    else if (c == 16) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria15.png";
+    }
+    else if (c == 17) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria16.png";
+    }
+    else if (c == 18) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria17.png";
+    }
+    else if (c == 19) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria18.png";
+    }
+    else if (c == 20) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria19.png";
+    }
+    else if (c == 21) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria20.png";
+    }
+    else if (c == 22) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria21.png";
+    }
+    else if (c == 23) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria22.png";
+    }
+    else if (c == 24) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria23.png";
+    }
+    else if (c == 25) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria24.png";
+    }
+    else if (c == 26) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria25.png";
+    }
+    else if (c == 27) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria26.png";
+    }
+    else if (c == 28) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria27.png";
+    }
+    else if (c == 29) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria28.png";
+    }
+    else if (c == 30) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria29.png";
+    }
+    else if (c == 31) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria30.png";
+    }
+    else if (c == 32) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria31.png";
+    }
+    else if (c == 33) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria32.png";
+    }
+    else if (c == 34) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria33.png";
+    }
+    else if (c == 35) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria34.png";
+    }
+    else if (c == 36) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria35.png";
+    }
+    else if (c == 37) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria36.png";
+    }
+    else if (c == 38) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria37.png";
+    }
+    else if (c == 39) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria38.png";
+    }
+    else if (c == 40) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria39.png";
+    }
+    else if (c == 41) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria40.png";
+    }
+    else if (c == 42) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria41.png";
+    }
+    else if (c == 43) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria42.png";
+    }
+    else if (c == 44) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria43.png";
+    }
+    else if (c == 45) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria44.png";
+    }
+    else if (c == 46) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria45.png";
+    }
+    else if (c == 47) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria46.png";
+    }
+    else if (c == 48) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria47.png";
+    }
+    else if (c == 49) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria48.png";
+    }
+    else if (c == 50) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria49.png";
+    }
+    else if (c == 51) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria50.png";
+    }
+    else if (c == 52) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria51.png";
+    }
+    else if (c == 53) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria52.png";
+    }
+    else if (c == 54) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria53.png";
+    }
+    else if (c == 55) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria54.png";
+    }
+    else if (c == 56) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria55.png";
+    }
+    else if (c == 57) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria56.png";
+    }
+    else if (c == 58) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria57.png";
+    }
+    else if (c == 59) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria58.png";
+    }
+    else if (c == 60) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria59.png";
+    }
+    else if (c == 61) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria60.png";
+    }
+    else if (c == 62) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria61.png";
+    }
+    else if (c == 63) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria62.png";
+    }
+    else if (c == 64) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria63.png";
+    }
+    else if (c == 65) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria64.png";
+    }
+    else if (c == 66) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria65.png";
+    }
+    else if (c == 67) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria66.png";
+    }
+    else if (c == 68) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria67.png";
+    }
+    else if (c == 69) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria68.png";
+    }
+    else if (c == 70) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria69.png";
+    }
+    else if (c == 71) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria70.png";
+    }
+    else if (c == 72) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria71.png";
+    }
+    else if (c == 73) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria72.png";
+    }
+    else if (c == 74) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria73.png";
+    }
+    else if (c == 75) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria74.png";
+    }
+    else if (c == 76) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria75.png";
+    }
+    else if (c == 77) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria76.png";
+    }
+    else if (c == 78) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria77.png";
+    }
+    else if (c == 79) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria78.png";
+    }
+    else if (c == 80) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria79.png";
+    }
+    else if (c == 81) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria80.png";
+    }
+    else if (c == 82) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria81.png";
+    }
+    else if (c == 83) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria82.png";
+    }
+    else if (c == 84) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria83.png";
+    }
+    else if (c == 85) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria84.png";
+    }
+    else if (c == 86) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria85.png";
+    }
+    else if (c == 87) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria86.png";
+    }
+    else if (c == 88) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria87.png";
+    }
+    else if (c == 89) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria88.png";
+    }
+    else if (c == 90) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria89.png";
+    }
+    else if (c == 91) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria90.png";
+    }
+    else if (c == 92) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria91.png";
+    }
+    else if (c == 93) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria92.png";
+    }
+    else if (c == 94) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria93.png";
+    }
+    else if (c == 95) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria94.png";
+    }
+    else if (c == 96) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria95.png";
+    }
+    else if (c == 97) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria96.png";
+    }
+    else if (c == 98) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria97.png";
+    }
+    else if (c == 99) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria98.png";
+    }
+    else if (c == 100) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria99.png";
+    }
+    else if (c == 101) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria100.png";
+    }
+    else if (c == 102) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria101.png";
+    }
+    else if (c == 103) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria102.png";
+    }
+    else if (c == 104) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria103.png";
+    }
+    else if (c == 105) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria104.png";
+    }
+    else if (c == 106) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria105.png";
+    }
+    else if (c == 107) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria106.png";
+    }
+    else if (c == 108) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria107.png";
+    }
+    else if (c == 109) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria108.png";
+    }
+    else if (c == 110) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria109.png";
+    }
+    else if (c == 111) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria110.png";
+    }
+    else if (c == 112) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria111.png";
+    }
+    else if (c == 113) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria112.png";
+    }
+    else if (c == 114) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria113.png";
+    }
+    else if (c == 115) {
+        document.getElementById('animar').src = "/assets/animacoes/alegria/alegria114.png";
+    }
+    else if (c == 116) {
+        document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";
+    }
+    else if (c == 117) {
+        document.getElementById("content").innerHTML = "";
+    }
+    c = c + 1;
+    t = setTimeout("alegria()",40);
+}
+
+
+function feliz() {
+    if (c == 1) {
+        document.getElementById('animar').src = "/assets/animacoes/feliz/feliz1.png";
+    }
+    else if (c == 2) {
+        document.getElementById('animar').src = "/assets/animacoes/feliz/feliz1.png";
+    }
+    else if (c == 3) {
+        document.getElementById('animar').src = "/assets/animacoes/feliz/feliz2.png";
+    }
+    else if (c == 4) {
+        document.getElementById('animar').src = "/assets/animacoes/feliz/feliz2.png";
+    }
+    else if (c == 5) {
+        document.getElementById('animar').src = "/assets/animacoes/feliz/feliz2.png";
+    }
+    else if (c == 6) {
+        document.getElementById('animar').src = "/assets/animacoes/feliz/feliz2.png";
+    }
+    else if (c == 7) {
+        document.getElementById('animar').src = "/assets/animacoes/feliz/feliz1.png";
+    }
+    else if (c == 8) {
+        document.getElementById('animar').src = "/assets/animacoes/feliz/feliz1.png";
+    }
+    else if (c == 9) {
+        document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";
     }
     c = c + 1;
     t = setTimeout("feliz()",300);
@@ -144,7 +884,7 @@ function empolgado() {
         document.getElementById('animar').src = "/assets/animacoes/empolgado/empolgado1.jpg"; 
     }
     else if (c == 13) {
-        document.getElementById('animar').src = "/assets/animacoes/padrao.jpg"; 
+        document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif"; 
     }
     // A cada intervalo de tempo, variável c aumenta em 1 seu valor
     c = c + 1;
@@ -156,19 +896,13 @@ function empolgado() {
 function triste() {
 
     if (c == 1) {
-        document.getElementById('animar').src = "/assets/animacoes/triste/triste.jpg";
+        document.getElementById("content").innerHTML = "<br>Que pena! Você não passou na prova! <br>Mas não desista! <br> Que tal refazer as aulas deste capítulo?";
     }
-    else if (c == 2) {
-        document.getElementById('animar').src = "/assets/animacoes/triste/triste.jpg";
+    else if (c == 2){
+        document.getElementById("opcoesdeajuda").style.display = 'block';
     }
     else if (c == 3) {
-        document.getElementById('animar').src = "/assets/animacoes/triste/triste.jpg";
-    }
-    else if (c == 4) {
-        document.getElementById('animar').src = "/assets/animacoes/triste/triste.jpg";
-    }
-    else if (c == 5) {
-        document.getElementById('animar').src = "/assets/animacoes/padrao.jpg";
+        document.getElementById('animar').src = "/assets/animacoes/triste/triste.gif";
     }
     // A cada intervalo de tempo, variável c aumenta em 1 seu valor
     c = c + 1;
@@ -179,62 +913,40 @@ function triste() {
 
 function ajuda() {
     if (c == 1) {
-        document.getElementById('animar').src = "/assets/animacoes/falas/ajuda1.png";
+        document.getElementById('animar').src = "/assets/animacoes/duvida/duvida.gif";
     }
     else if (c == 2) {
-        document.getElementById('animar').src = "/assets/animacoes/falas/ajuda1.png";
+        document.getElementById("content").innerHTML = "<br>Percebi que você está muito tempo nesse capítulo. <br>";
     }
     else if (c == 3) {
-        document.getElementById('animar').src = "/assets/animacoes/falas/ajuda2.png";
+        document.getElementById("content").innerHTML = "<br>Você está com dificuldade? <br> Posso te ajudar? <br>";
     }
     else if (c == 4) {
-        document.getElementById('animar').src = "/assets/animacoes/falas/ajuda2.png";
+        document.getElementById("ajudaagente").style.display = 'block';
     }
-    else if (c == 5) {
-        document.getElementById('animar').src = "/assets/animacoes/falas/ajuda2.png";
-    }
-    else if (c == 6) {
-        document.getElementById('animar').src = "/assets/animacoes/falas/ajuda3.png";
-    }
-    else if (c == 7) {
-        document.getElementById('animar').src = "/assets/animacoes/falas/ajuda3.png";
-    }
-    else if (c == 8) {
-        document.getElementById('animar').src = "/assets/animacoes/falas/ajuda3.png";
-    }
-    else if (c == 9) {
-        document.getElementById('animar').src = "/assets/animacoes/padrao.jpg";
-    }
+    
     c = c + 1;
-    t = setTimeout("ajuda()",2000);
+    t = setTimeout("ajuda()",1500);
 }
-
 
 
     /* Função que checa se o timer já está correndo, evitando a criação de novos timer caso o botão seja pressionado mais
     de uma vez*/
     function doTimer(acao) {
-    if (!timerLigado) {
-        timerLigado = 1;
-        acao();
+        if (!timerLigado) {
+            timerLigado = 1;
+            acao();
+        }
     }
-}
-
-
-
-
-
-
-
 
 
   var segundos = parseInt($('#counter-time').data('seconds')); //inicio do cronometro
   function conta() {
     segundos--;
-    if(segundos == 30){ /////////////////////////////////////TEMPO Q FECHA O MODAL E AGENTE RESPONDE/////////////////////
+    if(segundos == 27){ /////////////////////////////////////TEMPO Q FECHA O MODAL E AGENTE RESPONDE/////////////////////
       document.getElementById("fechar").click();
       window.location.href='#ancora';
-      doTimer(ajuda);
+      doTimer(triste);
       
     }
     document.getElementById("counter").innerHTML = segundos;
@@ -301,28 +1013,37 @@ function ajuda() {
   }
 
 
+  function aceitaajuda(){
+    document.getElementById("ajudaagente").style.display = 'block';
+    document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";
+    document.getElementById("content").innerHTML = "Nesse link você tem acesso a um material <br> extra que pode te ajudar nos estudos: <br> <a href='https:/www.google.com' target='_blank'> Material extra </a>"; // COLOCAR LINK MATERIAL EXTRA - ALUNO ACEITA AJUDA
+ 
 
-  //  clippy.load('F1', function(agent) {
-        // Do anything with the loaded agent
+  }
 
-    //    agent.show();
-    //    agent.animate();
-    //    agent.stop();
-    //    agent.speak('When all else fails, bind some paper together. My name is Clippy.');
-        
-    //    agent.speak('outra fala');
-    //    agent.play('Searching');agent.play('Searching');
-    //    agente.stop();
+  function negaajuda(){
+    document.getElementById("ajudaagente").style.display = 'block';
+    document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";
+    document.getElementById("content").innerHTML = "OK! Continuarei aqui, caso precise."; // 
 
-    //    if (counter=="00:00:01"){
-    //       alert("HI");
+  }
 
-    //    }
-  //  });
+  function refazeraulas(){
+    document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";
+    document.getElementById("opcoesdeajuda").style.display = 'none';
+    document.getElementById("content").innerHTML = "Estudar é sempre uma boa escolha!"; // 
+    setTimeout(function(){document.getElementById("content").innerHTML = "";}, 1000);
+  }
+
+  function novoteste(){
+    document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";
+    document.getElementById("opcoesdeajuda").style.display = 'none';
+    document.getElementById("content").innerHTML = "";
+    setTimeout(function() {document.getElementById("botaoavaliacao").click();}, 1000);
+
+  }
 
 </script>
-
-
 
 
 
@@ -338,11 +1059,23 @@ function ajuda() {
 <%= render @capitulo.conteudos %>
 <br>
 <center><!--<h2>Avaliação</h2>-->
+<%= link_to "Avaliação", avaliacaos_path(:id => @capitulo.id) %>
+<br><br>
 <%= render @capitulo.avaliacaos %>
 </center>
 
+<h2><div id="content"  style='text-align:left'></div></h2>
+<div class="ajudaagente" id= "ajudaagente" style="display: none; text-align:left;"> 
+    <button onclick="aceitaajuda()" type="button">SIM</button>
+    <button onclick="negaajuda()" type="button">NÃO</button>
+</div>
+<div class="opcoesdeajuda" id= "opcoesdeajuda" style="display: none; text-align: left;">
+    <button onclick="novoteste()" type="button">Tentar novamente o teste do capítulo</button> <!-- ATUALIZAR PAGE E ABRIR MODAL DO TESTE -->
+    <button onclick="location.href='http://localhost:3000/capitulos'" type="button">Ir para a tela de capitulos</button>
+    <button onclick="refazeraulas()" type="button">Refazer aulas do capítulo</button> 
+</div>
+    
 
-
-
-<img id="animar" src="/assets/animacoes/padrao.jpg" width="230px"/>
+</div>
+<img id="animar" src="/assets/animacoes/neutro/neutro.gif" width="230px"/>
 <a href="#" id="ancora">

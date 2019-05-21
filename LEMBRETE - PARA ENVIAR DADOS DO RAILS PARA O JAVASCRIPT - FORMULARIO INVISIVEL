@@ -6,3 +6,43 @@
           <%= f.text_field :tempo_total, class: 'form-control' %>
 
   <% end %>
+
+
+<a href= "help_path" target="_blank"><img id="animar" src="/assets/animacoes/feliz/feliz.gif" width="130px"/></a>
+
+        <%= link_to help_path do %>
+          <%= image_tag('/assets/animacoes/feliz/feliz.gif', :width =>  "130px") %>
+        <% end %>
+
+
+        CÓDIGO JAVASCRIPT Q RODA AO CARREGAR PÁGINA:
+
+        	$(document).ready(function(){
+	    executa5();
+	    $(".cubagem, .tabbable").on('click mouseover load', executa5);
+
+	        function executa5(){
+	          
+	            alert('fui chamado no carregamento');
+	            setTimeout(function(){ document.getElementById('animar').src = "/assets/animacoes/padrao.jpg"; }, 3000);
+	            setTimeout(function(){document.getElementById("content").innerHTML = "<br>Por enquanto você só tem o capítulo 2 disponível. <br>Você quer fazer a prova para pular o capítulo 1 e ir para o 2? <br>  <button>SIM</button> <button>NÃO</button>"; }, 3000);
+	            
+
+	    };  
+	});
+
+
+
+
+
+		setTimeout(function(){ document.getElementById('animar').src = "/assets/animacoes/padrao.jpg"; }, 1000);
+		setTimeout(function(){document.getElementById("content").innerHTML = "<br>Por enquanto você só tem o capítulo 2 disponível. <br>Você quer fazer a prova para pular o capítulo 1 e ir para o 2? <br>"; }, 1000);
+		setTimeout(function(){document.getElementById("pulartopico").style.display = 'block';}, 1000);
+
+
+
+	document.getElementById("content").innerHTML = "<br>Percebi que você está muito tempo nesse capítulo. <br>";
+    document.getElementById('animar').src = "/assets/animacoes/falas/ajuda1.png"; 
+    setTimeout(function(){ document.getElementById("content").innerHTML = "<br><br>Você está com dificuldade? <br> Precisa de ajuda? <br>"; }, 3000);
+    setTimeout(function(){ document.getElementById("ajudaagente").style.display = 'block'; }, 3000);
+    setTimeout(function(){document.getElementById('animar').src = "/assets/animacoes/padrao.jpg"; }, 6000);

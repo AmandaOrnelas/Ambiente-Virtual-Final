@@ -15,7 +15,9 @@
     <%= render 'layouts/header' %>
     <% flash.each do |name, msg| %>
         <%= content_tag(:div, msg, class: "alert alert-info") %>
-        <img id="animar" src="/assets/animacoes/feliz/feliz.gif" width="130px"/>
+        <%= link_to help_path do %>
+          <%= image_tag('/assets/animacoes/feliz/feliz.gif', :width =>  "130px") %>
+        <% end %>
 
 <% end %>
     <div class="container">

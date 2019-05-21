@@ -1,14 +1,10 @@
 
-  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-<%= avaliacao.titulo.parameterize %>-1">
-		<%= avaliacao.titulo %>
+  <button type="button" id= "botaoavaliacao" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-<%= avaliacao.titulo.parameterize %>-1">
+    <%= avaliacao.titulo %>
   </button>
 
   <% index2 = 1 %>
   <% avaliacao.questaos.each do |questao| %>
-
-
-
-
 
 
   <!-- Modal Page index-->
@@ -23,56 +19,45 @@
           </div>
           <br>
           <center>
-          			<%= render 'prova_alunos/form' %>
+                
           
+          <% index = 1 %>
           
- 
-          
-            
-          
-        
-
-					
+           <%= form_with model: @prova_aluno, local: true do |f| %>
               <% questao.alternativas.each do |alternativa| %>
-                      
-
-                <form action="">
+                
 
                   Resposta certa: <div class="certa" id="certa" ><%= questao.respostacerta %></div> <br><br>
-                  Número Questão: <div class="questao" id="questao" ><%= questao.id %></div> <br><br>
 
-
-  							  <%= alternativa.opcao1 %><input type="radio" name="resp1" value=<%= alternativa.opcao1 %>> <br>
-  							  <%= alternativa.opcao2 %><input type="radio" name="resp1" value=<%= alternativa.opcao2 %>> <br>
-  							  <%= alternativa.opcao3 %><input type="radio" name="resp1" value=<%= alternativa.opcao3 %>> <br>
-  							  <%= alternativa.opcao4 %><input type="radio" name="resp1" value=<%= alternativa.opcao4 %>> <br>
-  							  <br>
-  							  <button id= "botao" onclick="salvaresposta('<%= questao.respostacerta %>', '<%= questao.id %>')"> ENVIAR RESPOSTA</button>   
-
-                </form>
-							   	  
-						<% end %>
+                  <%= alternativa.opcao1 %><input type="radio" name="resp1" value=<%= alternativa.opcao1 %>> <br>
+                  <%= alternativa.opcao2 %><input type="radio" name="resp1" value=<%= alternativa.opcao2 %>> <br>
+                  <%= alternativa.opcao3 %><input type="radio" name="resp1" value=<%= alternativa.opcao3 %>> <br>
+                  <%= alternativa.opcao4 %><input type="radio" name="resp1" value=<%= alternativa.opcao4 %>> <br>
+                  <br>
+                  <button id= "botao" onclick="salvaresposta()"> ENVIAR RESPOSTA</button>
+                      
+                  <% index += 1 %>
+                    
+            <% end %>
+    
+          <% end %>
 
           </center>
           </div>
           <div class="modal-footer">
-          
             <% if index2 != avaliacao.questaos.size %>
-              <button type="button" class="btn btn-default btn-next" data-toggle="modal" data-target="#modal-<%= avaliacao.titulo.parameterize %>-<%= index2 + 1 %>" onclick="closenext()" data-dismiss="modal" >Next => </button>
+                <button type="button" class="btn btn-default btn-next" data-toggle="modal" data-target="#modal-<%= avaliacao.titulo.parameterize %>-<%= index2 + 1 %>" onclick="closenext()" data-dismiss="modal" >Next => </button>
             <% end %>
 
-             <%= label_tag :tempo, class: "form-control", id: "cronometro" do %>
+            <%= label_tag :tempo, class: "form-control", id: "cronometro" do %>
                <span id="counter">00:00:00</span>
-             <% end %>
+            <% end %>
 
-             <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
           </div>
-
         </div>
       </div>
     </div>
-
-
 
     <% index2 += 1 %>
   <% end %>
@@ -81,4 +66,3 @@
 <br><br>
 
 </center>
-
