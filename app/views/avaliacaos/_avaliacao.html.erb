@@ -3,8 +3,10 @@
     <%= avaliacao.titulo %>
   </button>
 
+  <%= link_to 'Prova', new_prova_aluno_path(capitulo: params[:id]) %>
+
   <% index2 = 1 %>
-  <% avaliacao.questaos.each do |questao| %>
+  <% avaliacao.questaos.each_with_index do |questao, index| %>
 
 
   <!-- Modal Page index-->
@@ -21,7 +23,7 @@
           <center>
                 
           
-          <% index = 1 %>
+          <% #index = 1 %>
           
            <%= form_with model: @prova_aluno, local: true do |f| %>
               <% questao.alternativas.each do |alternativa| %>
@@ -29,14 +31,15 @@
 
                   Resposta certa: <div class="certa" id="certa" ><%= questao.respostacerta %></div> <br><br>
 
-                  <%= alternativa.opcao1 %><input type="radio" name="resp1" value=<%= alternativa.opcao1 %>> <br>
-                  <%= alternativa.opcao2 %><input type="radio" name="resp1" value=<%= alternativa.opcao2 %>> <br>
-                  <%= alternativa.opcao3 %><input type="radio" name="resp1" value=<%= alternativa.opcao3 %>> <br>
-                  <%= alternativa.opcao4 %><input type="radio" name="resp1" value=<%= alternativa.opcao4 %>> <br>
+                  <%= alternativa.opcao1 %><input type="radio" name="resp<%= index %>" value=<%= alternativa.opcao1 %>> <br>
+                  <%= alternativa.opcao2 %><input type="radio" name="resp<%= index %>" value=<%= alternativa.opcao2 %>> <br>
+                  <%= alternativa.opcao3 %><input type="radio" name="resp<%= index %>" value=<%= alternativa.opcao3 %>> <br>
+                  <%= alternativa.opcao4 %><input type="radio" name="resp<%= index %>" value=<%= alternativa.opcao4 %>> <br>
                   <br>
-                  <button id= "botao" onclick="salvaresposta()"> ENVIAR RESPOSTA</button>
-                      
-                  <% index += 1 %>
+                  <% if index == 2 %>
+                    <button id= "botao" onclick="salvaresposta()"> ENVIAR RESPOSTA</button>
+                  <% end %> 
+                  <% #index += 1 %>
                     
             <% end %>
     
@@ -66,3 +69,53 @@
 <br><br>
 
 </center>
+
+<script type="text/javascript">
+
+  function salvaresposta(certa, questao){
+
+    
+    document.getElementById("botao").disabled = true;
+
+    var resposta1 = $('input[name=resp0]:checked').val(); //TA PEGANDO CERTO!
+    var resposta2 = $('input[name=resp1]:checked').val(); //TA PEGANDO CERTO!
+    var resposta3 = $('input[name=resp2]:checked').val(); //TA PEGANDO CERTO!
+    var resposta4 = $('input[name=resp3]:checked').val(); //TA PEGANDO CERTO!
+
+
+
+    var user_id = <%= current_user.id %>
+    
+    //var certa = document.getElementById('certa').innerHTML;
+    //var questao = document.getElementById('questao').innerHTML;
+
+    var value = 1;
+    alert(questao);
+
+    data = {
+        "resposta1": resposta1,
+        "resposta2": resposta2,
+        "resposta3": resposta3,
+        "resposta4": resposta4
+    }
+
+
+   // if (questao==1){
+    let authoToken = $('meta[name=csrf-token]').attr('content');
+    $.ajax({
+      type: 'POST',
+      url: '/prova_alunos/'+value,
+      data: {
+        _method: 'PATCH',
+        authenticity_token: authoToken,
+        prova_aluno: data
+      },
+      success: function(data){
+        console.log(data);
+      },
+      error: function(error){
+        console.log(error);
+      }
+    });
+
+</script>

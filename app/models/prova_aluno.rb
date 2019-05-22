@@ -1,4 +1,4 @@
 class ProvaAluno < ApplicationRecord
-  belongs_to :avaliacao
+  has_many :avaliacao
   belongs_to :user
 end

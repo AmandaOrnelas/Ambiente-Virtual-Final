@@ -3,12 +3,17 @@
 <script>
 var pontuação=0;
 
-  function salvaresposta(certa, questao){
+  function _salvaresposta(certa, questao){
 
     
     document.getElementById("botao").disabled = true;
 
-    var resposta = $('input[name=resp1]:checked').val(); //TA PEGANDO CERTO!
+    var resposta1 = $('input[name=resp0]:checked').val(); //TA PEGANDO CERTO!
+    var resposta2 = $('input[name=resp1]:checked').val(); //TA PEGANDO CERTO!
+    var resposta3 = $('input[name=resp2]:checked').val(); //TA PEGANDO CERTO!
+    var resposta4 = $('input[name=resp3]:checked').val(); //TA PEGANDO CERTO!
+
+
 
     var user_id = <%= current_user.id %>
     
@@ -18,6 +23,14 @@ var pontuação=0;
     var value = 1;
     alert(questao);
 
+    data = {
+        "resposta1": resposta1,
+        "resposta2": resposta2,
+        "resposta3": resposta3,
+        "resposta4": resposta4
+    }
+
+
    // if (questao==1){
     let authoToken = $('meta[name=csrf-token]').attr('content');
     $.ajax({
@@ -26,7 +39,13 @@ var pontuação=0;
       data: {
         _method: 'PATCH',
         authenticity_token: authoToken,
-        prova_aluno: { resposta1: resposta }
+        prova_aluno: data
+      },
+      success: function(data){
+        console.log(data);
+      },
+      error: function(error){
+        console.log(error);
       }
     });
 

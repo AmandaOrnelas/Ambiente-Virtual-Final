@@ -1,1 +1,22 @@
-TESTE
+<center>
+<%= form_tag(prova_alunos_path(capitulo: params[:capitulo]), {:method => :post}) do %>
+
+<% @avaliacao.questaos.each_with_index do |questao, index| %>
+                
+    <% questao.alternativas.each do |alternativa| %>
+                
+
+    	Resposta certa: <div class="certa" id="certa" ><%= questao.respostacerta %></div> <br>
+
+    	<%= radio_button_tag "resp#{index}", "#{alternativa.opcao1}" %> <%= alternativa.opcao1 %>
+    	<%= radio_button_tag "resp#{index}", "#{alternativa.opcao2}" %> <%= alternativa.opcao2 %>
+    	<%= radio_button_tag "resp#{index}", "#{alternativa.opcao3}" %> <%= alternativa.opcao3 %>
+    	<%= radio_button_tag "resp#{index}", "#{alternativa.opcao4}" %> <%= alternativa.opcao4 %>
+
+        <br>
+             
+    <% end %> 
+<% end %>
+<%= submit_tag "Enviar respostas" %> 
+<% end %>
+</center>

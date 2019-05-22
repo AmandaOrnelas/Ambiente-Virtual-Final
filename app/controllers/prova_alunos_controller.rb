@@ -10,6 +10,9 @@ class ProvaAlunosController < ApplicationController
   	end
 
 	def new
+      capitulo = params[:capitulo]
+      @avaliacao = Avaliacao.find_by(capitulo_id: capitulo)
+
   		@prova_aluno = ProvaAluno.new
 	end
 
@@ -18,7 +21,31 @@ class ProvaAlunosController < ApplicationController
 	end
 
 	def create
-  		@prova_aluno = ProvaAluno.new(prova_aluno_params)
+    
+    @capitulo = params[:capitulo]
+    @avaliacao = Avaliacao.find_by(capitulo_id: @capitulo)
+    
+    resultado_final = [params[:resp0], params[:resp1], params[:resp2], 
+    params[:resp2], params[:resp2], params[:resp2], params[:resp2], 
+    params[:resp2], params[:resp2], params[:resp2]]
+
+    @nota_final = calcular_nota(@avaliacao, resultado_final)
+
+    @prova_aluno = ProvaAluno.new(
+      resposta1: params[:resp0],
+      resposta2: params[:resp1],
+      resposta3: params[:resp2],
+      resposta4: params[:resp1],
+      resposta5: params[:resp1],
+      resposta6: params[:resp1],
+      resposta7: params[:resp1],
+      resposta8: params[:resp1],
+      resposta9: params[:resp1],
+      resposta10: params[:resp1],
+      user_id: current_user.id,
+      avaliacao_id: @avaliacao.id,
+      nota: @nota_final
+    )
 
   		if @prova_aluno.save
     		redirect_to @prova_aluno
@@ -30,6 +57,7 @@ class ProvaAlunosController < ApplicationController
   def update
     prova_aluno = ProvaAluno.find(params[:id])
     prova_aluno.update!(resposta1: params[:prova_aluno][:resposta1])
+    
 
 		# @tempo_capitulo = TempoCapitulo.find(params[:id])
 
@@ -45,8 +73,25 @@ class ProvaAlunosController < ApplicationController
 
  
   private
+
+    def calcular_nota(avaliacao_id_object, resultado_final)
+      @questao = buscaquestao(avaliacao_id_object)
+      @resultado = @questao.zip(resultado_final)
+      puts "++++++++++++++++++++++++#{@questao}"
+      puts "++++++++++++++++++++++++#{@resultado}"
+      @resultado = @resultado.map { |questao, resultado| questao if questao == resultado  }
+      @resultado = @resultado.compact
+      @resultado.count
+      
+    end
+
+    def buscaquestao(avaliacao_id_object)
+      @questao = Questao.where(avaliacao_id: avaliacao_id_object)
+      @questao.map(&:respostacerta)
+    end
+
     def prova_aluno_params
-      params.require(:prova_aluno).permit(:resposta1, :resposta2, :resposta3, :resposta4, :resposta5, :resposta6, :resposta7, :resposta8, :resposta9, :resposta10, :user_id)
+      params.require(:prova_aluno).permit(:resposta1, :resposta2, :resposta3, :resposta4, :resposta5, :resposta6, :resposta7, :resposta8, :resposta9, :resposta10, :user_id, :avaliacao_id, :nota)
     end
 
 
