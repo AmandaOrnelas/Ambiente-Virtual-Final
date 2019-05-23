@@ -1,3 +1,24 @@
+<script type="text/javascript">
+
+$(document).ready(function(){
+    boaprova();
+    $(".cubagem, .tabbable").on('click mouseover load', boaprova);
+        function boaprova() {
+			var usuario = document.getElementById("usuario").innerHTML;
+		    document.getElementById("content").innerHTML = "Boa prova, "+usuario+ "!!!"; //ACRESCENTAR NOME DO USUÁRIO CURRENT
+		    document.getElementById('animar').src = "/assets/animacoes/feliz/feliz.gif";
+		    setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";}, 3000);
+		    setTimeout( function () {document.getElementById("content").innerHTML = "";}, 3000);
+		}
+});
+
+	
+
+</script>
+
+<h2><div id="content"  style='text-align:left'></div></h2>
+<img id="animar" src="/assets/animacoes/neutro/neutro.gif" width="180px"/>
+
 <center>
 <%= form_tag(prova_alunos_path(capitulo: params[:capitulo]), {:method => :post}) do %>
 
@@ -20,3 +41,7 @@
 <%= submit_tag "Enviar respostas" %> 
 <% end %>
 </center>
+
+
+<div id="usuario"> <%= current_user.name %></div>
+

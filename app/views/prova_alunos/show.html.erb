@@ -1,1 +1,281 @@
-<%= @prova_aluno.resposta1 %>
+<span id="counter-time" data-seconds='<%= current_user.nivel %>'></span>
+<script type='text/javascript' src='jquery.js'></script>
+
+<script type='text/javascript'>
+
+ 
+
+$(document).ready(function() {
+	var nota = document.getElementById("nota").innerHTML;
+	var usuario = document.getElementById("usuario").innerHTML;
+	
+	if (nota.match(/1/)){
+  		document.getElementById("content").innerHTML = "Parabéns, "+usuario+ "!!! Você arrasou!! Sua nota foi "+ nota;
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria1.png";}, 300);
+        setTimeout(function() {document.getElementById('animar').style.width = "350px";}, 355);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria2.png";}, 350);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria3.png";}, 400);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria4.png";}, 450);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria5.png";}, 500);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria6.png";}, 550);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria7.png";}, 600);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria8.png";}, 650);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria9.png";}, 700);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria10.png";}, 750);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria11.png";}, 800);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria12.png";}, 850);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria13.png";}, 900);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria14.png";}, 950);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria15.png";}, 1000);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria16.png";}, 1050);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria17.png";}, 1100);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria18.png";}, 1150);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria19.png";}, 1200);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria20.png";}, 1250);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria21.png";}, 1300);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria22.png";}, 1350);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria23.png";}, 1400);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria24.png";}, 1450);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria25.png";}, 1500);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria26.png";}, 1550);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria27.png";}, 1600);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria28.png";}, 1650);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria29.png";}, 1700);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria30.png";}, 1750);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria31.png";}, 1800);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria32.png";}, 1850);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria33.png";}, 1900);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria34.png";}, 1950);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria35.png";}, 2000);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria36.png";}, 2050);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria37.png";}, 2100);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria38.png";}, 2150);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria39.png";}, 2200);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria40.png";}, 2250);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria41.png";}, 2300);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria42.png";}, 2350);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria43.png";}, 2400);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria44.png";}, 2450);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria45.png";}, 2500);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria46.png";}, 2550);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria47.png";}, 2600);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria48.png";}, 2650);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria49.png";}, 2700);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria50.png";}, 2750);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria51.png";}, 2800);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria52.png";}, 2850);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria53.png";}, 2900);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria54.png";}, 3000);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria55.png";}, 3050);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria56.png";}, 3100);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria57.png";}, 3150);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria58.png";}, 3200);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria59.png";}, 3250);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria60.png";}, 3300);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria61.png";}, 3350);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria62.png";}, 3400);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria63.png";}, 3450);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria64.png";}, 3500);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria65.png";}, 3550);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria66.png";}, 3600);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria67.png";}, 3650);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria68.png";}, 3700);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria69.png";}, 3750);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria70.png";}, 3800);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria71.png";}, 3850);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria72.png";}, 3900);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria73.png";}, 3950);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria74.png";}, 4000);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria75.png";}, 4050);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria76.png";}, 4100);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria77.png";}, 4150);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria78.png";}, 4200);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria79.png";}, 4250);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria80.png";}, 4300);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria81.png";}, 4350);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria82.png";}, 4400);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria83.png";}, 4450);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria84.png";}, 4500);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria85.png";}, 4550);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria86.png";}, 4600);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria87.png";}, 4650);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria88.png";}, 4700);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria89.png";}, 4750);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria90.png";}, 4800);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria91.png";}, 4850);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria92.png";}, 4900);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria93.png";}, 4950);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria94.png";}, 5000);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria95.png";}, 5050);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria96.png";}, 5100);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria97.png";}, 5150);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria98.png";}, 5200);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria99.png";}, 5250);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria100.png";}, 5300);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria101.png";}, 5350);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria102.png";}, 5400);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria103.png";}, 5450);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria104.png";}, 5500);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria105.png";}, 5550);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria106.png";}, 5600);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria107.png";}, 5650);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria108.png";}, 5700);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria109.png";}, 5750);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria110.png";}, 5800);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria111.png";}, 5850);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria112.png";}, 5900);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria113.png";}, 5950);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria114.png";}, 6000);
+        setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";}, 6050);
+        setTimeout(function() {document.getElementById("content").innerHTML = "";}, 6100);
+        setTimeout(function() {document.getElementById('animar').style.width = "180px";}, 6050);
+
+        var value = 1;
+        var nivel = 2;
+
+	    let authToken = $('meta[name=csrf-token]').attr('content');
+	    $.ajax({
+	      type: 'POST',
+	      url: '/users/<%= @prova_aluno.user_id %>',
+	      data: {
+	        _method: 'PATCH',
+	        authenticity_token: authToken,
+	        user: { nivel: nivel }
+	      }
+	    });
+
+
+	}
+
+	if (nota.match(/2/)){
+  		setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/triste/triste.gif";}, 1000);
+		document.getElementById("content").innerHTML = "Que pena! Você não passou, "+usuario+ "!! Sua nota foi "+ nota;
+		setTimeout( function() {document.getElementById("content").innerHTML=""}, 4000)
+		setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";}, 5000)		
+
+	}	
+	if (nota.match(/3/)){
+		setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/triste/triste.gif";}, 1000);
+		document.getElementById("content").innerHTML = "Que pena! Você não passou, "+usuario+ "!! Sua nota foi "+ nota;
+		setTimeout( function() {document.getElementById("content").innerHTML=""}, 4000)
+		setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";}, 5000);
+
+	}
+	if (nota.match(/4/)){
+		setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/triste/triste.gif";}, 1000);
+		document.getElementById("content").innerHTML = "Que pena! Você não passou, "+usuario+ "!! Sua nota foi "+ nota;
+		setTimeout( function() {document.getElementById("content").innerHTML=""}, 4000)
+		setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";}, 5000);
+
+	}
+	if (nota.match(/5/)){
+		setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/triste/triste.gif";}, 1000);
+		document.getElementById("content").innerHTML = "Que pena! Você não passou, "+usuario+ "!! Sua nota foi "+ nota;
+		setTimeout( function() {document.getElementById("content").innerHTML=""}, 4000)
+		setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";}, 5000);
+
+	}
+	if (nota.match(/6/)){
+		setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/feliz/feliz.gif";}, 1000);
+		document.getElementById("content").innerHTML = "Parabéns, "+usuario+ "!! Sua nota foi "+ nota;
+		setTimeout( function() {document.getElementById("content").innerHTML=""}, 3000)
+		setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";}, 5000);
+
+	}
+	if (nota.match(/7/)){
+		setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/feliz/feliz.gif";}, 1000);
+		document.getElementById("content").innerHTML = "Parabéns, "+usuario+ "!! Sua nota foi "+ nota;
+		setTimeout( function() {document.getElementById("content").innerHTML=""}, 3000)
+		setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";}, 5000);
+
+	}
+	if (nota.match(/8/)){
+		setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/feliz/feliz.gif";}, 1000);
+		document.getElementById("content").innerHTML = "Parabéns, "+usuario+ "!! Sua nota foi "+ nota;
+		setTimeout( function() {document.getElementById("content").innerHTML=""}, 3000)
+		setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";}, 5000);
+
+	}
+	if (nota.match(/9/)){
+		setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/feliz/feliz.gif";}, 1000);
+		document.getElementById("content").innerHTML = "Parabéns, "+usuario+ "!! Sua nota foi "+ nota;
+		setTimeout( function() {document.getElementById("content").innerHTML=""}, 3000)
+		setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";}, 5000);
+
+	}
+	if (nota.match(/10/)){
+
+
+	}
+	
+	
+
+})
+</script>
+<script type="text/javascript">
+
+
+
+	        function teste(){
+	          var nota = document.getElementById("nota").innerHTML;
+	            alert('fui chamado no carregamento');
+	   			if (nota < 6){
+	   				triste();
+	   			}else if(nota == 10){
+	   				nota10();
+	   			}else{
+	   				parabens();
+	   			}
+	   		}
+
+	
+	function nota10() {
+		var usuario = document.getElementById("usuario").innerHTML;
+		
+	    document.getElementById("content").innerHTML = "Parabéns, "+usuario+ "!!! <br> Sua nota foi +"nota; //ACRESCENTAR NOME DO USUÁRIO CURRENT
+	    document.getElementById('animar').src = "/assets/animacoes/feliz/feliz.gif";
+	    setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";}, 3000);
+	    setTimeout( function () {document.getElementById("content").innerHTML = "";}, 3000);
+	    //MUDAR USUARIO NIVEL PARA 2 +++++++++++++++++++++++++++++++++++++
+	}
+
+	function parabens() {
+		var usuario = document.getElementById("usuario").innerHTML;
+		var nota = document.getElementById("nota").innerHTML;
+	    document.getElementById("content").innerHTML = "Parabéns, "+usuario+ "!!! <br> Sua nota foi +"nota; //ACRESCENTAR NOME DO USUÁRIO CURRENT
+	    document.getElementById('animar').src = "/assets/animacoes/feliz/feliz.gif";
+	    setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";}, 3000);
+	    setTimeout( function () {document.getElementById("content").innerHTML = "";}, 3000);
+	    //MUDAR USUARIO NIVEL PARA 2 +++++++++++++++++++++++++++++++++++++
+	}
+
+	function triste() {
+		var usuario = document.getElementById("usuario").innerHTML;
+		var nota = document.getElementById("nota").innerHTML;
+	    document.getElementById("content").innerHTML = "Que pena, "+usuario+ "! Você não passou! <br> Sua nota foi +"nota; //ACRESCENTAR NOME DO USUÁRIO CURRENT
+	    document.getElementById('animar').src = "/assets/animacoes/triste/triste.gif";
+	    setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";}, 3000);
+	    setTimeout( function () {document.getElementById("content").innerHTML = "";}, 3000);
+	}
+</script>
+
+<h2><div id="content"  style='text-align:left'></div></h2>
+<img id="animar" src="/assets/animacoes/neutro/neutro.gif" width="180px"/>
+<br><br>
+
+<!-- <%= @prova_aluno.resposta1 %><br>
+<%= @prova_aluno.resposta2 %><br>
+<%= @prova_aluno.resposta3 %><br>
+<%= @prova_aluno.resposta4 %><br>
+<%= @prova_aluno.resposta5 %><br>
+<%= @prova_aluno.resposta6 %><br>
+<%= @prova_aluno.resposta7 %><br>
+<%= @prova_aluno.resposta8 %><br>
+<%= @prova_aluno.resposta9 %><br>
+<%= @prova_aluno.resposta10 %><br> -->
+<div id="nota"> <%= @prova_aluno.nota %></div>
+
+
+<div class="hidden" id="usuario"> <%= current_user.name %></div>
+
+<!-- LINK CONTINUAR ESTUDANDO - aLINK PARA EDITAR DADOS USUARIO E MUDAR NIVEL PARA 2 - SEMN Q O USUÁRIO VEJA-->

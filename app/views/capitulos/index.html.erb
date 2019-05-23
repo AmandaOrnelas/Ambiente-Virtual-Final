@@ -5,7 +5,7 @@
 
 	function maisinfo(){
         document.getElementById('animar').src = "/assets/animacoes/duvida/duvida.gif";
-        document.getElementById("content").innerHTML = "<br>Por enquanto você só tem o capítulo 2 disponível. <br>Você quer fazer a prova para pular o capítulo 1 e ir para o 2? <br>"; 
+        document.getElementById("content").innerHTML = "<br>Por enquanto você só tem o capítulo 1 disponível. <br>Você quer fazer a prova para pular o capítulo 1 e ir para o 2? <br>"; 
         document.getElementById("pulartopico").style.display = 'block';
 	}
 
@@ -109,6 +109,7 @@ function atencao() {
 
 
     <h1>    Capítulos </h1>
+    <%= link_to "Avaliação", new_prova_aluno_path(capitulo: 1) %>
 
     <br><br>
 	<% if current_user.nivel == "1" %>

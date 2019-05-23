@@ -1,15 +1,15 @@
 
   <button type="button" id= "botaoavaliacao" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-<%= avaliacao.titulo.parameterize %>-1">
-    <%= avaliacao.titulo %>
+    <%= link_to avaliacao.titulo, new_prova_aluno_path(capitulo: params[:id]) %>
   </button>
 
-  <%= link_to 'Prova', new_prova_aluno_path(capitulo: params[:id]) %>
+  <!-- <%= link_to 'Prova', new_prova_aluno_path(capitulo: params[:id]) %>
 
   <% index2 = 1 %>
   <% avaliacao.questaos.each_with_index do |questao, index| %>
 
 
-  <!-- Modal Page index-->
+  
   <div class="modal fade" id="modal-<%= avaliacao.titulo.parameterize %>-<%= index2 %>" tabindex2="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -118,4 +118,4 @@
       }
     });
 
-</script>
+</script>-->
