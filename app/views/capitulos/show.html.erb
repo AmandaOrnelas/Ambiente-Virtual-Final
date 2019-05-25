@@ -961,11 +961,19 @@ function ajuda() {
 
   var segundos = parseInt($('#counter-time').data('seconds')); //inicio do cronometro
   function conta() {
-    segundos--;
-    if(segundos == 27){ /////////////////////////////////////TEMPO Q FECHA O MODAL E AGENTE RESPONDE/////////////////////
+    segundos++;
+    var capitulo = document.getElementById("capitulo").innerHTML;
+    var tempomaximo;
+    if (capitulo ==1){
+        tempomaximo = 30;
+    }else{
+        tempomaximo = 40;
+    }
+    if(segundos == tempomaximo){ /////////////////////////////////////TEMPO Q FECHA O MODAL E AGENTE RESPONDE/////////////////////
       document.getElementById("fechar").click();
       window.location.href='#ancora';
-      doTimer(triste);
+      doTimer(ajuda);
+      segundos = 0;
       
     }
     document.getElementById("counter").innerHTML = segundos;
@@ -1033,10 +1041,10 @@ function ajuda() {
 
 
   function aceitaajuda(){
-    document.getElementById("ajudaagente").style.display = 'block';
+    document.getElementById("ajudaagente").style.display = 'none';
     document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";
     document.getElementById("content").innerHTML = "Nesse link você tem acesso a um material <br> extra que pode te ajudar nos estudos: <br> <a href='https:/www.google.com' target='_blank'> Material extra </a>"; // COLOCAR LINK MATERIAL EXTRA - ALUNO ACEITA AJUDA
- 
+    setTimeout(raiva(), 30000);
 
   }
 
@@ -1044,6 +1052,8 @@ function ajuda() {
     document.getElementById("ajudaagente").style.display = 'block';
     document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";
     document.getElementById("content").innerHTML = "OK! Continuarei aqui, caso precise."; // 
+    setTimeout(function(){document.getElementById("content").innerHTML = ""; }, 3000);
+    setTimeout(function(){ document.getElementById("ajudaagente").style.display = 'none';});
 
   }
 
@@ -1098,3 +1108,4 @@ function ajuda() {
 </div>
 <img id="animar" src="/assets/animacoes/neutro/neutro.gif" width="230px"/>
 <a href="#" id="ancora">
+<div class="hidden" id="capitulo"><%= @capitulo.id %></div>

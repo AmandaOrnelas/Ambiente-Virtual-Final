@@ -2,15 +2,80 @@
 <script type='text/javascript' src='jquery.js'></script>
 
 <script type='text/javascript'>
-
  
-
 $(document).ready(function() {
-	var nota = document.getElementById("nota").innerHTML;
-	var usuario = document.getElementById("usuario").innerHTML;
-	
-	if (nota.match(/1/)){
-  		document.getElementById("content").innerHTML = "Parabéns, "+usuario+ "!!! Você arrasou!! Sua nota foi "+ nota;
+    var nota = document.getElementById("nota").innerHTML;
+    var usuario = document.getElementById("usuario").innerHTML;
+    
+
+    if (nota.match(/0/)){
+        setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/triste/triste.gif";}, 1000);
+        document.getElementById("content2").innerHTML = "Que pena! Você não passou, "+usuario+ "!! Sua nota foi "+ nota;
+        setTimeout( function() {document.getElementById("content2").innerHTML = "Que tal refazer as aulas deste capítulo?";}, 3000);
+        setTimeout( function(){ document.getElementById("testeincorreto").style.display = 'block';}, 3000);
+    }
+    
+    if (nota.match(/1/)){
+        setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/triste/triste.gif";}, 1000);
+        document.getElementById("content2").innerHTML = "Que pena! Você não passou, "+usuario+ "!! Sua nota foi "+ nota;
+        setTimeout( function() {document.getElementById("content2").innerHTML = "Que tal refazer as aulas deste capítulo?";}, 3000);
+        setTimeout( function(){ document.getElementById("testeincorreto").style.display = 'block';}, 3000);
+        
+        
+    }
+
+    if (nota.match(/2/)){
+        setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/triste/triste.gif";}, 1000);
+        document.getElementById("content2").innerHTML = "Que pena! Você não passou, "+usuario+ "!! Sua nota foi "+ nota;
+        setTimeout( function() {document.getElementById("content2").innerHTML = "Que tal refazer as aulas deste capítulo?";}, 3000);
+        setTimeout( function(){ document.getElementById("testeincorreto").style.display = 'block';}, 3000);
+    }   
+
+    if (nota.match(/3/)){
+        setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/triste/triste.gif";}, 1000);
+        document.getElementById("content2").innerHTML = "Que pena! Você não passou, "+usuario+ "!! Sua nota foi "+ nota;
+        setTimeout( function() {document.getElementById("content2").innerHTML = "Que tal refazer as aulas deste capítulo?";}, 3000);
+        setTimeout( function(){ document.getElementById("testeincorreto").style.display = 'block';}, 3000);
+        
+    }
+    if (nota.match(/4/)){
+        setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/triste/triste.gif";}, 1000);
+        document.getElementById("content2").innerHTML = "Que pena! Você não passou, "+usuario+ "!! Sua nota foi "+ nota;
+        setTimeout( function() {document.getElementById("content2").innerHTML = "Que tal refazer as aulas deste capítulo?";}, 3000);
+        setTimeout( function(){ document.getElementById("testeincorreto").style.display = 'block';}, 3000);
+    }
+    if (nota.match(/5/)){
+        setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/triste/triste.gif";}, 1000);
+        document.getElementById("content2").innerHTML = "Que pena! Você não passou, "+usuario+ "!! Sua nota foi "+ nota;
+        setTimeout( function() {document.getElementById("content2").innerHTML = "Que tal refazer as aulas deste capítulo?";}, 3000);
+        setTimeout( function(){ document.getElementById("testeincorreto").style.display = 'block';}, 3000);
+    }
+    if (nota.match(/6/)){
+        setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/feliz/feliz.gif";}, 1000);
+        document.getElementById("content2").innerHTML = "Parabéns, "+usuario+ "!! Sua nota foi "+ nota;
+        setTimeout( function() {document.getElementById("content2").innerHTML=""}, 3000)
+        setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";}, 5000);
+    }
+    if (nota.match(/7/)){
+        setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/feliz/feliz.gif";}, 1000);
+        document.getElementById("content2").innerHTML = "Parabéns, "+usuario+ "!! Sua nota foi "+ nota;
+        setTimeout( function() {document.getElementById("content2").innerHTML=""}, 3000)
+        setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";}, 5000);
+    }
+    if (nota.match(/8/)){
+        setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/feliz/feliz.gif";}, 1000);
+        document.getElementById("content2").innerHTML = "Parabéns, "+usuario+ "!! Sua nota foi "+ nota;
+        setTimeout( function() {document.getElementById("content2").innerHTML=""}, 3000)
+        setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";}, 5000);
+    }
+    if (nota.match(/9/)){
+        setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/feliz/feliz.gif";}, 1000);
+        document.getElementById("content2").innerHTML = "Parabéns, "+usuario+ "!! Sua nota foi "+ nota;
+        setTimeout( function() {document.getElementById("content2").innerHTML=""}, 3000)
+        setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";}, 5000);
+    }
+    if (nota.match(/10/)){
+        document.getElementById("content2").innerHTML = "Parabéns, "+usuario+ "!!! Você arrasou!! Sua nota foi "+ nota;
         setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria1.png";}, 300);
         setTimeout(function() {document.getElementById('animar').style.width = "350px";}, 355);
         setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria2.png";}, 350);
@@ -127,141 +192,73 @@ $(document).ready(function() {
         setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria113.png";}, 5950);
         setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/alegria/alegria114.png";}, 6000);
         setTimeout(function() {document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";}, 6050);
-        setTimeout(function() {document.getElementById("content").innerHTML = "";}, 6100);
+        setTimeout(function() {document.getElementById("content2").innerHTML = "";}, 6100);
         setTimeout(function() {document.getElementById('animar').style.width = "180px";}, 6050);
+
+
 
         var value = 1;
         var nivel = 2;
+        let authToken = $('meta[name=csrf-token]').attr('content2');
+        $.ajax({
+          type: 'POST',
+          url: '/users/<%= @prova_aluno.user_id %>',
+          data: {
+            _method: 'PATCH',
+            authenticity_token: authToken,
+            user: { nivel: nivel }
+          }
+        });
 
-	    let authToken = $('meta[name=csrf-token]').attr('content');
-	    $.ajax({
-	      type: 'POST',
-	      url: '/users/<%= @prova_aluno.user_id %>',
-	      data: {
-	        _method: 'PATCH',
-	        authenticity_token: authToken,
-	        user: { nivel: nivel }
-	      }
-	    });
-
-
-	}
-
-	if (nota.match(/2/)){
-  		setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/triste/triste.gif";}, 1000);
-		document.getElementById("content").innerHTML = "Que pena! Você não passou, "+usuario+ "!! Sua nota foi "+ nota;
-		setTimeout( function() {document.getElementById("content").innerHTML=""}, 4000)
-		setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";}, 5000)		
-
-	}	
-	if (nota.match(/3/)){
-		setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/triste/triste.gif";}, 1000);
-		document.getElementById("content").innerHTML = "Que pena! Você não passou, "+usuario+ "!! Sua nota foi "+ nota;
-		setTimeout( function() {document.getElementById("content").innerHTML=""}, 4000)
-		setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";}, 5000);
-
-	}
-	if (nota.match(/4/)){
-		setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/triste/triste.gif";}, 1000);
-		document.getElementById("content").innerHTML = "Que pena! Você não passou, "+usuario+ "!! Sua nota foi "+ nota;
-		setTimeout( function() {document.getElementById("content").innerHTML=""}, 4000)
-		setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";}, 5000);
-
-	}
-	if (nota.match(/5/)){
-		setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/triste/triste.gif";}, 1000);
-		document.getElementById("content").innerHTML = "Que pena! Você não passou, "+usuario+ "!! Sua nota foi "+ nota;
-		setTimeout( function() {document.getElementById("content").innerHTML=""}, 4000)
-		setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";}, 5000);
-
-	}
-	if (nota.match(/6/)){
-		setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/feliz/feliz.gif";}, 1000);
-		document.getElementById("content").innerHTML = "Parabéns, "+usuario+ "!! Sua nota foi "+ nota;
-		setTimeout( function() {document.getElementById("content").innerHTML=""}, 3000)
-		setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";}, 5000);
-
-	}
-	if (nota.match(/7/)){
-		setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/feliz/feliz.gif";}, 1000);
-		document.getElementById("content").innerHTML = "Parabéns, "+usuario+ "!! Sua nota foi "+ nota;
-		setTimeout( function() {document.getElementById("content").innerHTML=""}, 3000)
-		setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";}, 5000);
-
-	}
-	if (nota.match(/8/)){
-		setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/feliz/feliz.gif";}, 1000);
-		document.getElementById("content").innerHTML = "Parabéns, "+usuario+ "!! Sua nota foi "+ nota;
-		setTimeout( function() {document.getElementById("content").innerHTML=""}, 3000)
-		setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";}, 5000);
-
-	}
-	if (nota.match(/9/)){
-		setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/feliz/feliz.gif";}, 1000);
-		document.getElementById("content").innerHTML = "Parabéns, "+usuario+ "!! Sua nota foi "+ nota;
-		setTimeout( function() {document.getElementById("content").innerHTML=""}, 3000)
-		setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";}, 5000);
-
-	}
-	if (nota.match(/10/)){
-
-
-	}
-	
-	
-
+        //MUDAR NIVEL DO ALUNO AUTOMATICAMENTE QUANDO ELE PASSAR NA PROVA
+    }
+    
+    
 })
 </script>
 <script type="text/javascript">
+            function teste(){
+              var nota = document.getElementById("nota").innerHTML;
+                alert('fui chamado no carregamento');
+                if (nota < 6){
+                    triste();
+                }else if(nota == 10){
+                    nota10();
+                }else{
+                    parabens();
+                }
+            }
+    
+    function nota10() {
+        var usuario = document.getElementById("usuario").innerHTML;
+        
+        document.getElementById("content2").innerHTML = "Parabéns, "+usuario+ "!!! <br> Sua nota foi +"nota; //ACRESCENTAR NOME DO USUÁRIO CURRENT
+        document.getElementById('animar').src = "/assets/animacoes/feliz/feliz.gif";
+        setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";}, 3000);
+        setTimeout( function () {document.getElementById("content2").innerHTML = "";}, 3000);
+        //MUDAR USUARIO NIVEL PARA 2 +++++++++++++++++++++++++++++++++++++
+    }
+    function parabens() {
+        var usuario = document.getElementById("usuario").innerHTML;
+        var nota = document.getElementById("nota").innerHTML;
+        document.getElementById("content2").innerHTML = "Parabéns, "+usuario+ "!!! <br> Sua nota foi +"nota; //ACRESCENTAR NOME DO USUÁRIO CURRENT
+        document.getElementById('animar').src = "/assets/animacoes/feliz/feliz.gif";
+        setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";}, 3000);
+        setTimeout( function () {document.getElementById("content2").innerHTML = "";}, 3000);
+        //MUDAR USUARIO NIVEL PARA 2 +++++++++++++++++++++++++++++++++++++
+    }
+    function triste() {
+        var usuario = document.getElementById("usuario").innerHTML;
+        var nota = document.getElementById("nota").innerHTML;
+        document.getElementById("content2").innerHTML = "Que pena, "+usuario+ "! Você não passou! <br> Sua nota foi +"nota; //ACRESCENTAR NOME DO USUÁRIO CURRENT
+        document.getElementById('animar').src = "/assets/animacoes/triste/triste.gif";
+        setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";}, 3000);
+        setTimeout( function () {document.getElementById("content2").innerHTML = "";}, 3000);
+    }
 
-
-
-	        function teste(){
-	          var nota = document.getElementById("nota").innerHTML;
-	            alert('fui chamado no carregamento');
-	   			if (nota < 6){
-	   				triste();
-	   			}else if(nota == 10){
-	   				nota10();
-	   			}else{
-	   				parabens();
-	   			}
-	   		}
-
-	
-	function nota10() {
-		var usuario = document.getElementById("usuario").innerHTML;
-		
-	    document.getElementById("content").innerHTML = "Parabéns, "+usuario+ "!!! <br> Sua nota foi +"nota; //ACRESCENTAR NOME DO USUÁRIO CURRENT
-	    document.getElementById('animar').src = "/assets/animacoes/feliz/feliz.gif";
-	    setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";}, 3000);
-	    setTimeout( function () {document.getElementById("content").innerHTML = "";}, 3000);
-	    //MUDAR USUARIO NIVEL PARA 2 +++++++++++++++++++++++++++++++++++++
-	}
-
-	function parabens() {
-		var usuario = document.getElementById("usuario").innerHTML;
-		var nota = document.getElementById("nota").innerHTML;
-	    document.getElementById("content").innerHTML = "Parabéns, "+usuario+ "!!! <br> Sua nota foi +"nota; //ACRESCENTAR NOME DO USUÁRIO CURRENT
-	    document.getElementById('animar').src = "/assets/animacoes/feliz/feliz.gif";
-	    setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";}, 3000);
-	    setTimeout( function () {document.getElementById("content").innerHTML = "";}, 3000);
-	    //MUDAR USUARIO NIVEL PARA 2 +++++++++++++++++++++++++++++++++++++
-	}
-
-	function triste() {
-		var usuario = document.getElementById("usuario").innerHTML;
-		var nota = document.getElementById("nota").innerHTML;
-	    document.getElementById("content").innerHTML = "Que pena, "+usuario+ "! Você não passou! <br> Sua nota foi +"nota; //ACRESCENTAR NOME DO USUÁRIO CURRENT
-	    document.getElementById('animar').src = "/assets/animacoes/triste/triste.gif";
-	    setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";}, 3000);
-	    setTimeout( function () {document.getElementById("content").innerHTML = "";}, 3000);
-	}
 </script>
 
-<h2><div id="content"  style='text-align:left'></div></h2>
-<img id="animar" src="/assets/animacoes/neutro/neutro.gif" width="180px"/>
-<br><br>
+<h2><div id="content2"  style='text-align:left'></div></h2>
 
 <!-- <%= @prova_aluno.resposta1 %><br>
 <%= @prova_aluno.resposta2 %><br>
@@ -273,8 +270,19 @@ $(document).ready(function() {
 <%= @prova_aluno.resposta8 %><br>
 <%= @prova_aluno.resposta9 %><br>
 <%= @prova_aluno.resposta10 %><br> -->
-<div id="nota"> <%= @prova_aluno.nota %></div>
+<div class="hidden" id="nota"> <%= @prova_aluno.nota %></div>
 
+<div class="testeincorreto" id= "testeincorreto" style="display: none; text-align:left;"> 
+    <button type="button"><%= link_to "Tentar novamente teste do capítulo", new_prova_aluno_path(capitulo: @prova_aluno.avaliacao_id) %></button>
+    <br>
+    <button type="button"><%= link_to "Voltar para a tela principal de capítulos", capitulos_path %></button>
+    <br>
+    <button type="button"><%= link_to "Refazer as aulas deste capítulo", capitulo_path(@prova_aluno.avaliacao_id) %></button>
+    <br>
+    <button type="button"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></button>
+</div>
+
+<img id="animar" src="/assets/animacoes/neutro/neutro.gif" width="180px"/>
 
 <div class="hidden" id="usuario"> <%= current_user.name %></div>
 

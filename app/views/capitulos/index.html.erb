@@ -109,7 +109,7 @@ function atencao() {
 
 
     <h1>    Capítulos </h1>
-    <%= link_to "Avaliação", new_prova_aluno_path(capitulo: 1) %>
+
 
     <br><br>
 	<% if current_user.nivel == "1" %>
@@ -117,7 +117,8 @@ function atencao() {
 	      		<h3><td><%= link_to capitulo.titulo, capitulo_path(capitulo), id: "habilitado", onclick: "chama()" %></td> <br><br></h3>
 	      		<h2><div id="content"  style='text-align:left'></div></h2>
 	      		<div class="pulartopico" id= "pulartopico" style="display: none; text-align:left;"> 
-    				<button onclick="location.href='help'" type="button">SIM</button>
+    				<button type="button"><%= link_to "SIM", new_prova_aluno_path(capitulo: 1) %></button>
+
     				<button onclick="negatopico()" type="button">NÃO</button>
     			</div>
     			<%= image_tag('/assets/animacoes/atencao/atencao.gif', :width =>  "130px", :align => "left", :id => "animar", :onclick => "maisinfo()") %> <!--COLOCAR LINK DA PROVA DE PULAR TÓPICOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO -->
