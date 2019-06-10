@@ -1,4 +1,6 @@
-<span id="counter-time" data-seconds='<%= current_user.nivel %>'></span>
+<span id="counter-time" data-seconds='<%= @user.nivel %>'></span>
+
+
 <script type='text/javascript' src='jquery.js'></script>
 
 <script type='text/javascript'>
@@ -9,10 +11,18 @@ $(document).ready(function() {
     
 
     if (nota.match(/0/)){
-        setTimeout( function() { document.getElementById('animar').src = "/assets/animacoes/triste/triste.gif";}, 1000);
-        document.getElementById("content2").innerHTML = "Que pena! Você não passou, "+usuario+ "!! Sua nota foi "+ nota;
-        setTimeout( function() {document.getElementById("content2").innerHTML = "Que tal refazer as aulas deste capítulo?";}, 3000);
-        setTimeout( function(){ document.getElementById("testeincorreto").style.display = 'block';}, 3000);
+        let value = document.getElementById("counter").innerHTML;
+        let authoToken = $('meta[name=csrf-token]').attr('content');
+        $.ajax({
+          type: 'POST',
+          url: '/users/<%= @user.id %>',
+          data: {
+            _method: 'PATCH',
+            authenticity_token: authoToken,
+            user: { nivel: "2" }
+          }
+        });
+        
     }
     
     if (nota.match(/1/)){
@@ -197,18 +207,7 @@ $(document).ready(function() {
 
 
 
-        var value = 1;
-        var nivel = 2;
-        let authToken = $('meta[name=csrf-token]').attr('content2');
-        $.ajax({
-          type: 'POST',
-          url: '/users/<%= @prova_aluno.user_id %>',
-          data: {
-            _method: 'PATCH',
-            authenticity_token: authToken,
-            user: { nivel: nivel }
-          }
-        });
+       
 
         //MUDAR NIVEL DO ALUNO AUTOMATICAMENTE QUANDO ELE PASSAR NA PROVA
     }
@@ -258,6 +257,12 @@ $(document).ready(function() {
 
 </script>
 
+
+ <%= label_tag :tempo, class: "form-control", id: "cronometro" do %>
+               <span id="counter"></span>
+<% end %>
+
+
 <h2><div id="content2"  style='text-align:left'></div></h2>
 
 <!-- <%= @prova_aluno.resposta1 %><br>
@@ -285,5 +290,7 @@ $(document).ready(function() {
 <img id="animar" src="/assets/animacoes/neutro/neutro.gif" width="180px"/>
 
 <div class="hidden" id="usuario"> <%= current_user.name %></div>
+
+
 
 <!-- LINK CONTINUAR ESTUDANDO - aLINK PARA EDITAR DADOS USUARIO E MUDAR NIVEL PARA 2 - SEMN Q O USUÁRIO VEJA-->

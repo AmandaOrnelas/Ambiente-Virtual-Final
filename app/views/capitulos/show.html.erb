@@ -971,9 +971,13 @@ function ajuda() {
     }
     if(segundos == tempomaximo){ /////////////////////////////////////TEMPO Q FECHA O MODAL E AGENTE RESPONDE/////////////////////
       document.getElementById("fechar").click();
-      window.location.href='#ancora';
-      doTimer(ajuda);
       segundos = 0;
+      window.location.href='#ancora';
+      document.getElementById('animar').src = "/assets/animacoes/duvida/duvida.gif";
+      setTimeout(function() {document.getElementById("content").innerHTML = "<br>Percebi que você está muito tempo nesse capítulo. <br>";}, 100);
+      setTimeout(function() {document.getElementById("content").innerHTML = "<br>Você está com dificuldade? <br> Posso te ajudar? <br>";}, 4000);
+      setTimeout(function() {document.getElementById("ajudaagente").style.display = 'block';}, 4000);
+      //doTimer(ajuda);
       
     }
     document.getElementById("counter").innerHTML = segundos;
@@ -1044,7 +1048,6 @@ function ajuda() {
     document.getElementById("ajudaagente").style.display = 'none';
     document.getElementById('animar').src = "/assets/animacoes/neutro/neutro.gif";
     document.getElementById("content").innerHTML = "Nesse link você tem acesso a um material <br> extra que pode te ajudar nos estudos: <br> <a href='https:/www.google.com' target='_blank'> Material extra </a>"; // COLOCAR LINK MATERIAL EXTRA - ALUNO ACEITA AJUDA
-    setTimeout(raiva(), 30000);
 
   }
 
@@ -1083,7 +1086,7 @@ function ajuda() {
 <end>
 
 
-<center> <h1><%= @capitulo.titulo %> </h1></center>
+<center> <h3><%= @capitulo.titulo %> </h3></center>
 <!--<center><h3>Conteudo</h3></center>-->
 <%= render @capitulo.conteudos %>
 
@@ -1106,6 +1109,6 @@ function ajuda() {
     
 
 </div>
-<img id="animar" src="/assets/animacoes/neutro/neutro.gif" width="230px"/>
+<img id="animar" src="/assets/animacoes/neutro/neutro.gif" width="200px"/>
 <a href="#" id="ancora">
 <div class="hidden" id="capitulo"><%= @capitulo.id %></div>

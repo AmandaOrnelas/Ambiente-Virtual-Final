@@ -7,6 +7,7 @@ class ProvaAlunosController < ApplicationController
 
   	def show
     	@prova_aluno = ProvaAluno.find(params[:id])
+      @user = User.find(current_user.id)
   	end
 
 	def new
@@ -26,8 +27,8 @@ class ProvaAlunosController < ApplicationController
     @avaliacao = Avaliacao.find_by(capitulo_id: @capitulo)
     
     resultado_final = [params[:resp0], params[:resp1], params[:resp2], 
-    params[:resp2], params[:resp2], params[:resp2], params[:resp2], 
-    params[:resp2], params[:resp2], params[:resp2]]
+    params[:resp3], params[:resp4], params[:resp5], params[:resp6], 
+    params[:resp7], params[:resp8], params[:resp9]]
 
     @nota_final = calcular_nota(@avaliacao, resultado_final)
 
@@ -35,13 +36,13 @@ class ProvaAlunosController < ApplicationController
       resposta1: params[:resp0],
       resposta2: params[:resp1],
       resposta3: params[:resp2],
-      resposta4: params[:resp1],
-      resposta5: params[:resp1],
-      resposta6: params[:resp1],
-      resposta7: params[:resp1],
-      resposta8: params[:resp1],
-      resposta9: params[:resp1],
-      resposta10: params[:resp1],
+      resposta4: params[:resp3],
+      resposta5: params[:resp4],
+      resposta6: params[:resp5],
+      resposta7: params[:resp6],
+      resposta8: params[:resp7],
+      resposta9: params[:resp8],
+      resposta10: params[:resp9],
       user_id: current_user.id,
       avaliacao_id: @avaliacao.id,
       nota: @nota_final
